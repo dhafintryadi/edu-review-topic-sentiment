@@ -1,0 +1,60 @@
+{
+    "model": "LDA_k8",
+    "severity_formula": "frequency * negative_ratio * mean_neg_confidence * (1 + high_conf_neg_ratio)",
+    "rankings": [
+        {
+            "barrier_category": "TB-4 System Usability Issues",
+            "total_frequency": 2780,
+            "avg_negative_ratio": 0.49856666666666666,
+            "total_severity": 1687.12,
+            "high_conf_negatives": 1021,
+            "rank": 1,
+            "priority_tier": "CRITICAL"
+        },
+        {
+            "barrier_category": "TB-7 Content Quality Mismatch",
+            "total_frequency": 2180,
+            "avg_negative_ratio": 0.311,
+            "total_severity": 668.44,
+            "high_conf_negatives": 421,
+            "rank": 2,
+            "priority_tier": "CRITICAL"
+        },
+        {
+            "barrier_category": "TB-6 Cost / Affordability Barrier",
+            "total_frequency": 448,
+            "avg_negative_ratio": 0.2009,
+            "total_severity": 86.47,
+            "high_conf_negatives": 60,
+            "rank": 3,
+            "priority_tier": "HIGH"
+        },
+        {
+            "barrier_category": "TB-1 Cognitive Difficulty",
+            "total_frequency": 2591,
+            "avg_negative_ratio": 0.0332,
+            "total_severity": 70.81,
+            "high_conf_negatives": 51,
+            "rank": 4,
+            "priority_tier": "HIGH"
+        },
+        {
+            "barrier_category": "TB-2 Engagement & Motivation Problem",
+            "total_frequency": 605,
+            "avg_negative_ratio": 0.0959,
+            "total_severity": 51.93,
+            "high_conf_negatives": 39,
+            "rank": 5,
+            "priority_tier": "MEDIUM"
+        },
+        {
+            "barrier_category": "TB-3 Lack of Learning Support",
+            "total_frequency": 724,
+            "avg_negative_ratio": 0.0746,
+            "total_severity": 47.71,
+            "high_conf_negatives": 36,
+            "rank": 6,
+            "priority_tier": "MEDIUM"
+        }
+    ]
+}

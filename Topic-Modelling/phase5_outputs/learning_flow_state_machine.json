@@ -1,0 +1,144 @@
+{
+    "artifact": "Learning Flow State Machine",
+    "model_type": "Finite State Machine (FSM) — logical/behavioral specification",
+    "important_note": "This is a behavioral design specification, not runtime code. Embed TB-7 curriculum checkpoints and TB-4 recovery states.",
+    "states": {
+        "ONBOARDING": {
+            "description": "User enters system for first time",
+            "entry_actions": [
+                "Run curriculum placement diagnostic (TB-7 prerequisite)",
+                "Check system stability (TB-4 pre-check)",
+                "Set access tier (TB-6 equity gate)"
+            ],
+            "transitions": {
+                "diagnostic_passed": "ACTIVE_LEARNING",
+                "mismatch_detected": "CURRICULUM_REALIGNMENT",
+                "system_failure": "DEGRADED_MODE",
+                "access_blocked": "ACCESS_LIMITATION_FLOW"
+            }
+        },
+        "ACTIVE_LEARNING": {
+            "description": "User is progressing through assigned content correctly",
+            "entry_actions": [
+                "Load curriculum-aligned content (TB-7 validated path)",
+                "Activate engagement loop (TB-2 low-priority)"
+            ],
+            "transitions": {
+                "cognitive_struggle_detected": "COGNITIVE_SUPPORT_MODE",
+                "content_mismatch_detected": "CURRICULUM_REALIGNMENT",
+                "system_failure": "DEGRADED_MODE",
+                "engagement_drop": "MOTIVATION_RECOVERY",
+                "support_request": "AI_TUTOR_SESSION",
+                "content_completed": "PROGRESS_CHECKPOINT"
+            }
+        },
+        "COGNITIVE_SUPPORT_MODE": {
+            "description": "Learner is struggling with specific content (TB-1 trigger)",
+            "entry_actions": [
+                "Activate alternate explanation format",
+                "Reduce task complexity (ZPD chunking)",
+                "Surface AI Tutor hint (TB-3 support)"
+            ],
+            "transitions": {
+                "struggle_resolved": "ACTIVE_LEARNING",
+                "struggle_deepens": "AI_TUTOR_SESSION",
+                "prerequisite_gap_found": "CURRICULUM_REALIGNMENT",
+                "system_failure": "DEGRADED_MODE"
+            }
+        },
+        "CURRICULUM_REALIGNMENT": {
+            "description": "Curriculum mismatch detected — rerouting to prerequisite path (TB-7)",
+            "entry_actions": [
+                "Run prerequisite graph traversal",
+                "Serve upstream foundational content",
+                "Notify user with educational framing (not error message)"
+            ],
+            "transitions": {
+                "prerequisites_met": "ACTIVE_LEARNING",
+                "system_failure": "DEGRADED_MODE"
+            }
+        },
+        "AI_TUTOR_SESSION": {
+            "description": "Deep AI Tutor dialogue for TB-1/TB-3 support needs",
+            "entry_actions": [
+                "Load conversation context (last 3 failed attempts)",
+                "Activate scaffolding dialogue policy",
+                "Respect TB-4 state — suspend if system is degraded"
+            ],
+            "transitions": {
+                "issue_resolved": "ACTIVE_LEARNING",
+                "user_exits": "ACTIVE_LEARNING",
+                "system_failure": "DEGRADED_MODE"
+            }
+        },
+        "MOTIVATION_RECOVERY": {
+            "description": "Engagement drop detected (TB-2 trigger)",
+            "entry_actions": [
+                "Surface short micro-content or progress celebration",
+                "Do NOT trigger if TB-4 or TB-7 states are active"
+            ],
+            "transitions": {
+                "engagement_restored": "ACTIVE_LEARNING",
+                "user_exits": "SESSION_END"
+            }
+        },
+        "ACCESS_LIMITATION_FLOW": {
+            "description": "User hit affordability/paywall barrier (TB-6)",
+            "entry_actions": [
+                "Surface freemium content alternatives",
+                "Offer effort-based unlock challenge",
+                "Check subsidy eligibility flag"
+            ],
+            "transitions": {
+                "access_granted": "ACTIVE_LEARNING",
+                "user_exits": "SESSION_END"
+            }
+        },
+        "DEGRADED_MODE": {
+            "description": "System failure state (TB-4 override — highest priority)",
+            "entry_actions": [
+                "Cache current session state to local storage immediately",
+                "Activate offline content bundle if available",
+                "Suppress ALL non-critical features (engagement, gamification, AI Tutor)",
+                "Display graceful degradation UI with honest status message"
+            ],
+            "transitions": {
+                "system_restored": "ACTIVE_LEARNING",
+                "offline_content_available": "OFFLINE_LEARNING",
+                "no_content_available": "SESSION_END"
+            }
+        },
+        "OFFLINE_LEARNING": {
+            "description": "Minimal continuity mode — offline-first content only (TB-4 resilience)",
+            "entry_actions": [
+                "Load cached curriculum content only",
+                "Disable AI Tutor, server-dependent features",
+                "Enable local-only progress tracking"
+            ],
+            "transitions": {
+                "connectivity_restored": "ACTIVE_LEARNING",
+                "user_exits": "SESSION_END"
+            }
+        },
+        "PROGRESS_CHECKPOINT": {
+            "description": "User completed a content unit — validate advancement",
+            "entry_actions": [
+                "Check TB-7 curriculum alignment for next unit",
+                "Update learner knowledge state in knowledge tracing model",
+                "Trigger TB-2 engagement celebration (low priority)"
+            ],
+            "transitions": {
+                "next_unit_aligned": "ACTIVE_LEARNING",
+                "mismatch_in_next_unit": "CURRICULUM_REALIGNMENT"
+            }
+        },
+        "SESSION_END": {
+            "description": "Session terminated (voluntary or system-forced)",
+            "entry_actions": [
+                "Persist session state and progress",
+                "Schedule re-engagement notification (TB-2 — delayed, respectful timing)"
+            ],
+            "transitions": {}
+        }
+    }
+}

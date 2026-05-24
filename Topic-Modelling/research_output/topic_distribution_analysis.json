@@ -1,0 +1,70 @@
+{
+    "task": "T3 - Topic Distribution Analysis",
+    "note": "Relative dominance proxied by aggregate keyword weight per topic (LDA_k8 outputs). Corpus size: 41,797 unique reviews.",
+    "metrics": [
+        "topic_id",
+        "total_keyword_weight",
+        "relative_dominance_pct"
+    ],
+    "distribution": [
+        {
+            "topic_id": 1,
+            "total_keyword_weight": 0.6223,
+            "relative_dominance_pct": 14.72,
+            "topic_label": "Topic 1: Learning Comprehension & Clarity",
+            "barrier_category": "TB-1 Cognitive Difficulty"
+        },
+        {
+            "topic_id": 2,
+            "total_keyword_weight": 0.582,
+            "relative_dominance_pct": 13.77,
+            "topic_label": "Topic 2: Pricing & Package Affordability",
+            "barrier_category": "TB-6 Cost / Affordability Barrier"
+        },
+        {
+            "topic_id": 3,
+            "total_keyword_weight": 0.5659,
+            "relative_dominance_pct": 13.39,
+            "topic_label": "Topic 3: Need for Scaffolding & Question Banks",
+            "barrier_category": "TB-3 Lack of Learning Support"
+        },
+        {
+            "topic_id": 4,
+            "total_keyword_weight": 0.5567,
+            "relative_dominance_pct": 13.17,
+            "topic_label": "Topic 4: Learner Motivation & Engagement",
+            "barrier_category": "TB-2 Engagement & Motivation Problem"
+        },
+        {
+            "topic_id": 5,
+            "total_keyword_weight": 0.5389,
+            "relative_dominance_pct": 12.75,
+            "topic_label": "Topic 5: Core App Crashes & Login Failures",
+            "barrier_category": "TB-4 System Usability Issues"
+        },
+        {
+            "topic_id": 7,
+            "total_keyword_weight": 0.4583,
+            "relative_dominance_pct": 10.84,
+            "topic_label": "Topic 7: Authentication & System Access Errors",
+            "barrier_category": "TB-4 System Usability Issues"
+        },
+        {
+            "topic_id": 0,
+            "total_keyword_weight": 0.4519,
+            "relative_dominance_pct": 10.69,
+            "topic_label": "Topic 0: Incomplete Material & Content Gaps",
+            "barrier_category": "TB-7 Content Quality Mismatch"
+        },
+        {
+            "topic_id": 6,
+            "total_keyword_weight": 0.4511,
+            "relative_dominance_pct": 10.67,
+            "topic_label": "Topic 6: Performance Lag & Update Errors",
+            "barrier_category": "TB-4 System Usability Issues"
+        }
+    ],
+    "most_dominant_topic": "Topic 1: Learning Comprehension & Clarity",
+    "least_dominant_topic": "Topic 6: Performance Lag & Update Errors",
+    "distribution_imbalance_note": "Most dominant topic (14.72%) vs least dominant (10.67%) — ratio: 1.4x"
+}

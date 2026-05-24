@@ -1,0 +1,92 @@
+{
+  "phase": "PHASE_3D_SR_BLUEPRINT_FEATURE_PRIORITIZATION_INTEGRATION",
+  "objective": {
+    "primary_goal": "Validate Sekolah Rakyat blueprint features against empirically derived learning barrier severity rankings",
+    "design_principle": "Analysis layer only \u2014 no model evolution, no taxonomy redesign"
+  },
+  "blueprint_validation_summary": {
+    "status": "VALIDATION LAYER ONLY (NO SYSTEM CHANGE)",
+    "alignment_result": "PARTIALLY VALIDATED",
+    "key_insights": [
+      "System stability (TB-4) is the primary blocking factor for all learning processes",
+      "Curriculum mismatch (TB-7) is second-order structural issue",
+      "Adaptive learning features depend on stability + curriculum correctness layers",
+      "Engagement and AI support are downstream optimizations, not core prerequisites"
+    ]
+  },
+  "feature_prioritization_matrix": [
+    {
+      "feature_area": "System Stability Layer",
+      "mapped_barrier": "TB-4 System Usability Issues",
+      "severity_rank": 1,
+      "severity_score": 1687.12,
+      "priority": "P0 - CRITICAL",
+      "interpretation": "Core system failures directly block learning process (login, crash, lag)",
+      "sr_blueprint_mapping": [
+        "Offline-first learning support",
+        "Crash recovery mechanism",
+        "Low-end device optimization"
+      ],
+      "validation_note": "Confirms SR system layer must exist before any adaptive intelligence layer"
+    },
+    {
+      "feature_area": "Curriculum Alignment Layer",
+      "mapped_barrier": "TB-7 Content Quality Mismatch",
+      "severity_rank": 2,
+      "severity_score": 668.44,
+      "priority": "P0 - CRITICAL",
+      "interpretation": "Instructional misalignment is structural learning failure",
+      "sr_blueprint_mapping": [
+        "Knowledge tracing system",
+        "Adaptive curriculum sequencing",
+        "Prerequisite graph modeling"
+      ],
+      "validation_note": "Confirms need for structured learning path before personalization"
+    },
+    {
+      "feature_area": "Access & Affordability Layer",
+      "mapped_barrier": "TB-6 Cost / Affordability Barrier",
+      "severity_rank": 3,
+      "severity_score": 86.47,
+      "priority": "P1 - HIGH",
+      "sr_blueprint_mapping": [
+        "Freemium access model",
+        "Subsidized learning pathways"
+      ]
+    },
+    {
+      "feature_area": "Cognitive Adaptation Layer",
+      "mapped_barrier": "TB-1 Cognitive Difficulty",
+      "severity_rank": 4,
+      "severity_score": 70.81,
+      "priority": "P1 - HIGH",
+      "interpretation": "High frequency but low negativity indicates mixed learning success",
+      "sr_blueprint_mapping": [
+        "Adaptive explanation simplification",
+        "Multi-modal learning support"
+      ]
+    },
+    {
+      "feature_area": "Engagement Layer",
+      "mapped_barrier": "TB-2 Engagement & Motivation",
+      "severity_rank": 5,
+      "severity_score": 51.93,
+      "priority": "P2 - MEDIUM",
+      "sr_blueprint_mapping": [
+        "Gamification system",
+        "Learning motivation loops"
+      ]
+    },
+    {
+      "feature_area": "Learning Support Layer",
+      "mapped_barrier": "TB-3 Lack of Learning Support",
+      "severity_rank": 6,
+      "severity_score": 47.71,
+      "priority": "P2 - MEDIUM",
+      "sr_blueprint_mapping": [
+        "AI tutor assistant",
+        "Context-aware help system"
+      ]
+    }
+  ]
+}

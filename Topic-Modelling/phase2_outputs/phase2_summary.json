@@ -1,0 +1,48 @@
+{
+  "phase": "PHASE_2_DICTIONARY_CORPUS_ENGINEERING",
+  "filter_params": {
+    "no_below": 5,
+    "no_above": 0.6,
+    "keep_n": 8000
+  },
+  "vocab": {
+    "pre_filter": 12383,
+    "post_filter": 2688,
+    "final": 2689,
+    "tokens_restored": 1,
+    "tokens_skipped": 4,
+    "reduction_pct": 78.28,
+    "bigrams_in_final": 398
+  },
+  "bow_corpus": {
+    "total_docs": 12017,
+    "empty_docs": 19,
+    "empty_pct": 0.1581,
+    "empty_flag": false,
+    "total_nonzero": 91218,
+    "sparsity_pct": 99.7177,
+    "bow_len_mean": 7.59,
+    "bow_len_median": 6.0,
+    "bow_len_p75": 10.0,
+    "bow_len_p90": 16.0,
+    "bow_len_max": 45
+  },
+  "barrier_audit": {
+    "all_passed": false,
+    "validated_bigrams_survived": 8,
+    "candidate_phrases_survived": 1,
+    "observed_terms_survived": 20,
+    "heuristic_terms_survived": 1
+  },
+  "artifacts": [
+    "lda_dictionary.gensim",
+    "lda_corpus.mm",
+    "lda_corpus.mm.index",
+    "phase2_vocab_before.csv",
+    "phase2_vocab_after.csv",
+    "phase2_barrier_survival.csv",
+    "phase2_bow_length_distribution.png",
+    "pre_filter_token2id_snapshot.json",
+    "phase2_summary.json"
+  ]
+}

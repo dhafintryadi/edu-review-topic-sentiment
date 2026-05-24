@@ -1,0 +1,26 @@
+{
+  "model_source": "LDA_k8",
+  "taxonomy_framework": "Sekolah Rakyat Learning Barrier Ontology",
+  "categories": {
+    "TB-1 Cognitive Difficulty": [
+      "Topic 1: Learning Comprehension & Clarity"
+    ],
+    "TB-2 Engagement & Motivation Problem": [
+      "Topic 4: Learner Motivation & Engagement"
+    ],
+    "TB-3 Lack of Learning Support": [
+      "Topic 3: Need for Scaffolding & Question Banks"
+    ],
+    "TB-4 System Usability Issues": [
+      "Topic 5: Core App Crashes & Login Failures",
+      "Topic 6: Performance Lag & Update Errors",
+      "Topic 7: Authentication & System Access Errors"
+    ],
+    "TB-6 Cost / Affordability Barrier": [
+      "Topic 2: Pricing & Package Affordability"
+    ],
+    "TB-7 Content Quality Mismatch": [
+      "Topic 0: Incomplete Material & Content Gaps"
+    ]
+  }
+}

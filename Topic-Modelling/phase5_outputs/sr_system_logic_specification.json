@@ -1,0 +1,36 @@
+{
+    "artifact": "SR Adaptive Learning System Logic Specification",
+    "version": "1.0-FINAL",
+    "generated_at": "2026-05-11T09:59:43.806335",
+    "pipeline_provenance": "LDA_k8 (Phase 3A) → TB Taxonomy (3B) → Severity Model (3C) → Blueprint Prioritization (3D) → Design Synthesis (4) → System Specification (5)",
+    "taxonomy_version": "TB-1 to TB-7 (frozen)",
+    "empirical_grounding": "All behavior rules derived from 41,797 Indonesian educational platform reviews",
+    "override_hierarchy": [
+        "LEVEL-0: TB-4 System Stability — ABSOLUTE OVERRIDE (supersedes all other rules)",
+        "LEVEL-1: TB-7 Curriculum Alignment — STRUCTURAL PREREQUISITE",
+        "LEVEL-2: TB-6 Access / Affordability — ENTRY GATE",
+        "LEVEL-3: TB-1 Cognitive Adaptation — PERSONALIZATION LAYER",
+        "LEVEL-4: TB-2 Engagement + TB-3 Support — EXPERIENCE OPTIMIZATION"
+    ],
+    "implementation_sequencing": [
+        "PHASE-A: Build TB-4 resilience layer (offline-first, crash recovery, graceful degradation)",
+        "PHASE-B: Build TB-7 curriculum engine (prerequisite graph, diagnostic placement, path sequencing)",
+        "PHASE-C: Implement TB-6 access model (freemium, effort-based unlocks, equity pathways)",
+        "PHASE-D: Deploy TB-1 cognitive adaptation (multi-modal content, ZPD chunking, difficulty calibration)",
+        "PHASE-E: Activate AI Tutor (TB-3 support + TB-1 scaffolding) — only after Phases A-D stable",
+        "PHASE-F: Engage TB-2 optimization layer (gamification, streaks, social features) — last"
+    ],
+    "component_references": {
+        "adaptive_decision_rules": "phase5_outputs/adaptive_decision_rule_engine.json",
+        "state_machine": "phase5_outputs/learning_flow_state_machine.json",
+        "ai_tutor_policy": "phase5_outputs/ai_tutor_behavioral_policy.json",
+        "resilience_protocol": "phase5_outputs/system_resilience_protocol.json"
+    },
+    "critical_design_constraints": [
+        "TB-4 system failure OVERRIDES all other adaptive logic — no exceptions",
+        "AI Tutor MUST NOT activate during degraded/offline system states",
+        "Curriculum alignment (TB-7) MUST precede personalization features",
+        "Engagement features (TB-2) MUST NOT be prioritized over structural barriers (TB-4, TB-7)",
+        "All behavior rules must remain traceable to empirical severity hierarchy"
+    ]
+}

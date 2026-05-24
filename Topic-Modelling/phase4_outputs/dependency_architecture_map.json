@@ -1,0 +1,92 @@
+{
+    "phase": "PHASE_4",
+    "model_type": "DESCRIPTIVE_DEPENDENCY_ANNOTATION",
+    "important_note": "This is an interpretive representation, NOT a runtime execution engine or enforcement DAG. All dependencies are analytical interpretations grounded in empirical severity data.",
+    "layers": [
+        {
+            "layer": 1,
+            "name": "Foundation Layer (System Reliability)",
+            "barriers": [
+                "TB-4 System Usability Issues"
+            ],
+            "priority": "P0 - CRITICAL",
+            "severity_score": 1687.12,
+            "depends_on": [],
+            "enables": [
+                "TB-7 Curriculum Alignment",
+                "TB-6 Access Model",
+                "TB-1 Cognitive Adaptation",
+                "TB-2 Engagement",
+                "TB-3 Support"
+            ],
+            "dependency_annotation": "All features in all other layers carry DEPENDENCY_RISK_FLAGGED if this layer is not stable."
+        },
+        {
+            "layer": 2,
+            "name": "Structural Content Layer (Curriculum Alignment)",
+            "barriers": [
+                "TB-7 Content Quality Mismatch"
+            ],
+            "priority": "P0 - CRITICAL",
+            "severity_score": 668.44,
+            "depends_on": [
+                "TB-4 System Usability Issues"
+            ],
+            "enables": [
+                "TB-1 Cognitive Adaptation",
+                "TB-3 Learning Support",
+                "TB-2 Engagement"
+            ],
+            "dependency_annotation": "Personalization and cognitive adaptation are DEPENDENCY_RISK_FLAGGED without correct curriculum structure."
+        },
+        {
+            "layer": 3,
+            "name": "Access & Equity Layer",
+            "barriers": [
+                "TB-6 Cost / Affordability Barrier"
+            ],
+            "priority": "P1 - HIGH",
+            "severity_score": 86.47,
+            "depends_on": [
+                "TB-4 System Usability Issues"
+            ],
+            "enables": [
+                "TB-2 Engagement (wider user base)"
+            ],
+            "dependency_annotation": "Access features require system stability but are independent of curriculum alignment."
+        },
+        {
+            "layer": 4,
+            "name": "Cognitive Personalization Layer",
+            "barriers": [
+                "TB-1 Cognitive Difficulty"
+            ],
+            "priority": "P1 - HIGH",
+            "severity_score": 70.81,
+            "depends_on": [
+                "TB-4 System Usability Issues",
+                "TB-7 Content Quality Mismatch"
+            ],
+            "enables": [
+                "TB-2 Engagement (improved motivation through mastery)"
+            ],
+            "dependency_annotation": "High-frequency but mixed-sentiment signal — target at-risk learner minority, not majority."
+        },
+        {
+            "layer": 5,
+            "name": "Experience Enhancement Layer",
+            "barriers": [
+                "TB-2 Engagement & Motivation Problem",
+                "TB-3 Lack of Learning Support"
+            ],
+            "priority": "P2 - MEDIUM",
+            "severity_score_avg": 49.82,
+            "depends_on": [
+                "TB-4 System Usability Issues",
+                "TB-7 Content Quality Mismatch"
+            ],
+            "enables": [],
+            "dependency_annotation": "Engagement and AI support are downstream optimizations. Empirically correct to implement after stability + curriculum."
+        }
+    ]
+}

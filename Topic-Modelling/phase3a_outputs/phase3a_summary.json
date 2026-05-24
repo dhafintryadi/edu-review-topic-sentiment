@@ -1,0 +1,48 @@
+{
+  "phase": "PHASE_3A_LDA_EXPLORATORY_TRAINING",
+  "parameters": {
+    "k_ranges": [
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "passes": 20,
+    "iterations": 100,
+    "alpha": "asymmetric",
+    "eta": "auto"
+  },
+  "results": [
+    {
+      "k": 4,
+      "coherence_cv": 0.4124,
+      "barrier_terms_found": 18,
+      "unique_topics_with_barriers": 4
+    },
+    {
+      "k": 6,
+      "coherence_cv": 0.4089,
+      "barrier_terms_found": 18,
+      "unique_topics_with_barriers": 5
+    },
+    {
+      "k": 8,
+      "coherence_cv": 0.4288,
+      "barrier_terms_found": 18,
+      "unique_topics_with_barriers": 8
+    },
+    {
+      "k": 10,
+      "coherence_cv": 0.4186,
+      "barrier_terms_found": 18,
+      "unique_topics_with_barriers": 8
+    },
+    {
+      "k": 12,
+      "coherence_cv": 0.4163,
+      "barrier_terms_found": 17,
+      "unique_topics_with_barriers": 8
+    }
+  ]
+}

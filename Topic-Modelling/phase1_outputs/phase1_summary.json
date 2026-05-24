@@ -1,0 +1,24 @@
+{
+  "phase": "PHASE_1_TOPIC_PREPROCESSING_OPTIMIZATION",
+  "input_docs": 12451,
+  "after_quality_filter": 12017,
+  "final_lda_corpus": 12017,
+  "final_vocab_size": 12383,
+  "total_tokens_final": 114682,
+  "bigrams_detected": 516,
+  "barrier_coverage_pct": 93.96,
+  "post_preprocessing_token_stats": {
+    "count": 12017.0,
+    "mean": 9.54,
+    "std": 8.68,
+    "min": 1.0,
+    "25%": 3.0,
+    "50%": 7.0,
+    "75%": 12.0,
+    "90%": 21.0,
+    "95%": 28.0,
+    "max": 65.0
+  },
+  "candidate_phrases_detected": 4,
+  "candidate_phrases_total": 27
+}

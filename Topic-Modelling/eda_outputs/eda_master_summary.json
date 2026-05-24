@@ -1,0 +1,192 @@
+{
+  "phase": "PHASE_0_EXPLORATORY_CORPUS_ANALYSIS",
+  "datasets": {
+    "main_total_rows": 59106,
+    "main_usable_rows": 43361,
+    "benchmark_total_rows": 3512,
+    "sentiment_main_rows": 59106
+  },
+  "score_distribution": {
+    "1": 8357,
+    "2": 2701,
+    "3": 4002,
+    "4": 4414,
+    "5": 28441,
+    "score": 5
+  },
+  "sentiment_distribution": {
+    "count": {
+      "positive": 41808,
+      "negative": 11985,
+      "neutral": 5313
+    },
+    "percentage": {
+      "positive": 70.73,
+      "negative": 20.28,
+      "neutral": 8.99
+    }
+  },
+  "token_length_stats": {
+    "count": 43361.0,
+    "mean": 17.57,
+    "std": 15.34,
+    "min": 1.0,
+    "25%": 7.0,
+    "50%": 13.0,
+    "75%": 23.0,
+    "90%": 38.0,
+    "95%": 50.0,
+    "max": 183.0
+  },
+  "vocabulary": {
+    "vocab_size": 11616,
+    "total_tokens": 761962
+  },
+  "sparsity": {
+    "n_docs": 43361,
+    "vocab_size": 11616,
+    "avg_unique_terms_per_doc": 14.68,
+    "estimated_sparsity": 0.998736,
+    "sparsity_pct": 99.8736
+  },
+  "negative_vocab_top20": [
+    {
+      "term": ",",
+      "frequency": 14245
+    },
+    {
+      "term": ".",
+      "frequency": 8604
+    },
+    {
+      "term": "saya",
+      "frequency": 8590
+    },
+    {
+      "term": "gak",
+      "frequency": 6234
+    },
+    {
+      "term": "bisa",
+      "frequency": 4863
+    },
+    {
+      "term": "aplikasi",
+      "frequency": 4042
+    },
+    {
+      "term": "tidak",
+      "frequency": 3588
+    },
+    {
+      "term": "dan",
+      "frequency": 3494
+    },
+    {
+      "term": "tapi",
+      "frequency": 3032
+    },
+    {
+      "term": "udah",
+      "frequency": 2409
+    },
+    {
+      "term": "soal",
+      "frequency": 2014
+    },
+    {
+      "term": "?",
+      "frequency": 1987
+    },
+    {
+      "term": "tolong",
+      "frequency": 1958
+    },
+    {
+      "term": "banget",
+      "frequency": 1913
+    },
+    {
+      "term": "sudah",
+      "frequency": 1897
+    },
+    {
+      "term": "buka",
+      "frequency": 1895
+    },
+    {
+      "term": "ajar",
+      "frequency": 1881
+    },
+    {
+      "term": "ya",
+      "frequency": 1801
+    },
+    {
+      "term": "aja",
+      "frequency": 1585
+    },
+    {
+      "term": "terus",
+      "frequency": 1546
+    }
+  ],
+  "severity_signals": [
+    {
+      "barrier_category": "Technical / App Crash",
+      "total_corpus_mentions": 6142,
+      "negative_doc_mentions": 3262,
+      "neg_doc_hit_rate_pct": 27.84,
+      "severity_signal": "HIGH"
+    },
+    {
+      "barrier_category": "Notification Harassment",
+      "total_corpus_mentions": 6917,
+      "negative_doc_mentions": 2830,
+      "neg_doc_hit_rate_pct": 24.15,
+      "severity_signal": "HIGH"
+    },
+    {
+      "barrier_category": "Login / Auth Issues",
+      "total_corpus_mentions": 4211,
+      "negative_doc_mentions": 2653,
+      "neg_doc_hit_rate_pct": 22.64,
+      "severity_signal": "HIGH"
+    },
+    {
+      "barrier_category": "UX / Navigation",
+      "total_corpus_mentions": 8061,
+      "negative_doc_mentions": 2552,
+      "neg_doc_hit_rate_pct": 21.78,
+      "severity_signal": "HIGH"
+    },
+    {
+      "barrier_category": "Paywall / Access Barrier",
+      "total_corpus_mentions": 4589,
+      "negative_doc_mentions": 1916,
+      "neg_doc_hit_rate_pct": 16.35,
+      "severity_signal": "MEDIUM"
+    },
+    {
+      "barrier_category": "Video / Media Failure",
+      "total_corpus_mentions": 4691,
+      "negative_doc_mentions": 1465,
+      "neg_doc_hit_rate_pct": 12.5,
+      "severity_signal": "MEDIUM"
+    },
+    {
+      "barrier_category": "Curriculum Mismatch",
+      "total_corpus_mentions": 5667,
+      "negative_doc_mentions": 1126,
+      "neg_doc_hit_rate_pct": 9.61,
+      "severity_signal": "MEDIUM"
+    },
+    {
+      "barrier_category": "Content Gap",
+      "total_corpus_mentions": 2226,
+      "negative_doc_mentions": 703,
+      "neg_doc_hit_rate_pct": 6.0,
+      "severity_signal": "LOW"
+    }
+  ]
+}

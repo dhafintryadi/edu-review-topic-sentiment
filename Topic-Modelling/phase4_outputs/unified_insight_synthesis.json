@@ -1,0 +1,34 @@
+{
+    "phase": "PHASE_4",
+    "title": "Sekolah Rakyat Learning Barrier Analysis — Unified Research Synthesis",
+    "generated_at": "2026-05-11T09:51:08.589298",
+    "pipeline_summary": {
+        "Phase 3A": "LDA_k8 exploratory topic modeling extracted 8 semantically stable topic clusters from 41,797 user reviews of Indonesian educational platforms.",
+        "Phase 3B": "Topic clusters were interpreted through educational theory (Cognitive Load, ZPD, SDT, HCI, Digital Divide) to construct the TB-1 to TB-7 Learning Barrier Taxonomy.",
+        "Phase 3C": "Sentiment analysis (IndoBERTweet, calibrated) was integrated as a severity amplifier using the formula: frequency × negative_ratio × confidence. System Usability (TB-4) emerged as the dominant critical barrier.",
+        "Phase 3D": "Severity rankings were mapped to Sekolah Rakyat blueprint features, producing a P0/P1/P2 implementation prioritization matrix.",
+        "Phase 4": "Design implications were synthesized into an architecture-aware, empirically grounded system design map with gap analysis and dependency annotations."
+    },
+    "core_research_finding": "Learning failure in digital education platforms in Indonesia is primarily driven by system instability and curriculum misalignment — NOT motivation or engagement deficits. Engagement is a downstream effect, not a root cause.",
+    "validated_hypotheses": [
+        "H1 CONFIRMED: System infrastructure failures (TB-4) represent the highest-severity barrier to learning (severity: 1687.12, 49.8% negative ratio).",
+        "H2 CONFIRMED: Curriculum structure mismatch (TB-7) is the second-order structural failure, not a content quality issue per se, but an instructional alignment failure.",
+        "H3 PARTIALLY CONFIRMED: Cognitive difficulty (TB-1) is high-frequency but mixed-polarity, suggesting the platform largely succeeds at comprehension — with an at-risk minority requiring adaptive support.",
+        "H4 CONFIRMED: Economic barriers (TB-6) are structurally real, not incidental, and require system-level design response (not just policy).",
+        "H5 CONFIRMED: Engagement and motivation signals (TB-2) are secondary effects — they represent downstream optimization opportunities, not foundational blockers."
+    ],
+    "sr_adaptive_learning_implications": [
+        "Adaptive intelligence (AI Tutor, personalization) is only effective on top of a stable, correctly-aligned platform.",
+        "The Sekolah Rakyat blueprint must enforce a stability-first, curriculum-second, intelligence-third architecture sequencing.",
+        "Gamification and engagement features risk being wasted investment if deployed before infrastructure is solid.",
+        "Equity features (offline access, subsidized pathways) are architectural requirements for the SR mission context, not optional enhancements.",
+        "The empirical absence of a distinct TB-5 (Digital Divide) cluster suggests access barriers are embedded within TB-4 and TB-6 — they should not be designed as a separate system module."
+    ],
+    "cross_layer_consistency_check": {
+        "topic_to_taxonomy": "CONSISTENT — 8 LDA topics map cleanly to 6 active TB categories (TB-5 empirically absent).",
+        "taxonomy_to_severity": "CONSISTENT — severity ordering matches educational theory predictions (system > curriculum > access > cognition > engagement).",
+        "severity_to_architecture": "CONSISTENT — P0/P1/P2 ordering directly reflects severity rankings without post-hoc reordering.",
+        "architecture_to_design_implications": "CONSISTENT — all feature requirements trace back to specific empirical signals (review evidence, sentiment ratios, topic keywords)."
+    },
+    "confidence_statement": "All conclusions in this synthesis are grounded in empirical signals from 41,797 user reviews. No architectural decisions rely solely on theoretical assumptions — each is corroborated by observed severity data."
+}

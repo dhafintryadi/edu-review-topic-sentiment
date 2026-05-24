@@ -1,0 +1,116 @@
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+.venv-1/
+venv/
+env/
+ENV/
+
+# IDE and OS files
+.vscode/
+.idea/
+desktop.ini
+Thumbs.db
+*.lnk
+~$*
+
+# Local logs and temp files
+*.log
+*.tmp
+*.temp
+test_write.txt
+test_pd.csv
+tmp_trainer/
+
+# Accidental nested workspace duplicate
+PKL/
+
+# Large pretrained/model artifacts
+*.bin
+*.bin.gz
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.model
+*.state
+*.gensim
+*.gensim.*
+checkpoints/
+checkpoint-*/
+models/
+
+# Large or sensitive document/report artifacts
+*.docx
+*.pptx
+*.pdf
+*.xlsx
+*.xls
+*.zip
+*.rar
+*.7z
+
+# Raw and generated datasets
+Datasets/*.csv
+Datasets/main_review_preprocessed_test/
+Crawler/google-play-scraper/datasets/*.csv
+Crawler/google-play-scraper/.github/
+Crawler/google-play-scraper/google_play_scraper/
+Crawler/google-play-scraper/tests/
+Sentiment-Analysis/nn-based/*.csv
+Sentiment-Analysis/nn-based/*.pkl
+Sentiment-Analysis/nn-based/fasttext_model.bin
+Sentiment-Analysis/nn-based/train_fasttext.txt
+Sentiment-Analysis/nn-based/valid_fasttext.txt
+Sentiment-Analysis/transformer-based/data/
+Sentiment-Analysis/transformer-based/models/
+Sentiment-Analysis/transformer-based/results/
+Sentiment-Analysis/transformer-based/venv/
+Sentiment-Analysis/transformer-based/logs/
+Sentiment-Analysis/transformer-based/visualizations/
+Sentiment-Analysis/transformer-based/notebooks/
+
+# Generated topic-modelling outputs
+Topic-Modelling/eda_outputs/*.csv
+Topic-Modelling/phase1_outputs/*.csv
+Topic-Modelling/phase1_outputs/lda_ready_corpus.csv
+Topic-Modelling/phase1_outputs/lda_token_lists.json
+Topic-Modelling/phase2_outputs/*.csv
+Topic-Modelling/phase3a_outputs/*.csv
+Topic-Modelling/phase3b_outputs/*.csv
+Topic-Modelling/phase3c_outputs/*.csv
+Topic-Modelling/research_output/*.csv
+Topic-Modelling/*.ipynb
+Topic-Modelling/eda_outputs/*.png
+Topic-Modelling/phase1_outputs/*.png
+Topic-Modelling/phase2_outputs/*.png
+Topic-Modelling/phase3a_outputs/*.png
+Topic-Modelling/phase3b_outputs/*.png
+Topic-Modelling/phase3b_outputs/doc_topic_matrix_k8.pkl
+Topic-Modelling/phase3b_outputs/lda_model_final_k8.gensim*
+Topic-Modelling/phase3a_outputs/lda_model_k*.gensim*
+Topic-Modelling/phase2_outputs/lda_dictionary.gensim
+Topic-Modelling/phase2_outputs/lda_corpus.mm*
+
+# Vendored external repositories / cloned dependencies
+Preprocessing/indonlu/
+Preprocessing/PySastrawi/
+Preprocessing/text-normalization/
+Sentiment-Analysis/fastText/
+Sentiment-Analysis/IndoBERTweet/
+Sentiment-Analysis/simpletransformers/
+Topic-Modelling/gensim/
+Topic-Modelling/pyLDAvis/

@@ -1,0 +1,58 @@
+{
+  "topic_0": {
+    "label": "Topic 0: Incomplete Material & Content Gaps",
+    "category": "TB-7 Content Quality Mismatch",
+    "theory_basis": "Instructional Design Misalignment",
+    "rationale": "Representative reviews explicitly mention 'materi kurang lengkap' and missing curriculum topics. Keywords like 'kurang' and 'materi' signal instructional mismatch with learner readiness rather than purely a paywall issue.",
+    "top_10_keywords": ["tidak", "video", "materi", "aplikasi", "belajar", "langgan", "saja", "bayar", "gratis", "download"]
+  },
+  "topic_1": {
+    "label": "Topic 1: Learning Comprehension & Clarity",
+    "category": "TB-1 Cognitive Difficulty",
+    "theory_basis": "Cognitive Load Theory",
+    "rationale": "Keywords 'paham', 'jelas', 'animasi' directly address the cognitive axis of learning. This topic captures feedback on how the presentation affects learning comprehension (cognitive ease vs difficulty).",
+    "top_10_keywords": ["belajar", "materi", "aplikasi", "quipper", "animasi", "jelas", "video", "paham", "suka", "sekolah"]
+  },
+  "topic_2": {
+    "label": "Topic 2: Pricing & Package Affordability",
+    "category": "TB-6 Cost / Affordability Barrier",
+    "theory_basis": "Educational Equity Constraint",
+    "rationale": "Anchors on 'murah', 'paket', 'harga_murah'. This represents economic friction affecting learning access (freemium/subsidy necessity).",
+    "top_10_keywords": ["bantu", "aplikasi", "belajar", "cepat", "paket", "siap_utbk", "tahun", "murah", "diupdate", "apalagi"]
+  },
+  "topic_3": {
+    "label": "Topic 3: Need for Scaffolding & Question Banks",
+    "category": "TB-3 Lack of Learning Support",
+    "theory_basis": "Zone of Proximal Development (Vygotsky)",
+    "rationale": "High frequency of 'bank_soal', 'bahas', 'tambah'. Indicates a need for additional instructional support, practice, and scaffolding to bridge learning gaps.",
+    "top_10_keywords": ["belajar", "aplikasi", "bahas", "mudah_paham", "soal", "tambah", "moga", "fitur", "guna", "tarik"]
+  },
+  "topic_4": {
+    "label": "Topic 4: Learner Motivation & Engagement",
+    "category": "TB-2 Engagement & Motivation Problem",
+    "theory_basis": "Self-Determination Theory",
+    "rationale": "Keywords 'semangat', 'seru', 'suka' map directly to intrinsic motivation and engagement levels, acting as the inverse of boredom/burnout barriers.",
+    "top_10_keywords": ["suka", "aplikasi", "belajar", "semangat", "pokok", "seru", "baca", "tugas", "mudah_erti", "rasa"]
+  },
+  "topic_5": {
+    "label": "Topic 5: Core App Crashes & Login Failures",
+    "category": "TB-4 System Usability Issues",
+    "theory_basis": "Human-Computer Interaction (HCI)",
+    "rationale": "Critical structural barriers affecting interaction flow (HCI). Defined by 'bug', 'keluar', 'login'. Represents friction preventing the learner from even entering the instructional state.",
+    "top_10_keywords": ["tidak", "aplikasi", "soal", "jawab", "bug", "buka", "kak", "masuk", "keluar", "kerja"]
+  },
+  "topic_6": {
+    "label": "Topic 6: Performance Lag & Update Errors",
+    "category": "TB-4 System Usability Issues",
+    "theory_basis": "Human-Computer Interaction (HCI)",
+    "rationale": "System performance barriers ('lag', 'update', 'download') that interrupt the continuity of learning flow.",
+    "top_10_keywords": ["aplikasi", "tidak", "mipi", "daftar", "utbk", "download", "admin", "buka", "saja", "quipper"]
+  },
+  "topic_7": {
+    "label": "Topic 7: Authentication & System Access Errors",
+    "category": "TB-4 System Usability Issues",
+    "theory_basis": "Human-Computer Interaction (HCI)",
+    "rationale": "System friction specifically tied to authentication ('sandi', 'sistem', 'error', 'loading'), disrupting access to learning resources.",
+    "top_10_keywords": ["pahamify", "tidak", "terus", "aplikasi", "soal", "to", "kadang", "apa", "error", "loading"]
+  }
+}

@@ -1,0 +1,20 @@
+* text=auto
+
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+*.bat text eol=crlf
+
+# Keep binary document/model formats out of text diffs if accidentally tracked.
+*.pdf binary
+*.docx binary
+*.pptx binary
+*.xlsx binary
+*.bin binary
+*.pkl binary
+*.npy binary
+*.npz binary
+*.safetensors binary
+

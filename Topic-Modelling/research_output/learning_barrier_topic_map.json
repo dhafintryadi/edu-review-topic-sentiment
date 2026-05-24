@@ -1,0 +1,87 @@
+{
+    "task": "T4 - Learning Barrier Mapping",
+    "constraint": "Mapping is interpretive, not prescriptive for system design",
+    "mapping_table": [
+        {
+            "topic_id": 0,
+            "topic_label": "Topic 0: Incomplete Material & Content Gaps",
+            "learning_barrier": "TB-7 Content Quality Mismatch",
+            "theory_basis": "Instructional Design Misalignment",
+            "mapping_type": "Interpretive post-hoc mapping (not model-supervised)",
+            "keyword_evidence": "tidak, video, materi, aplikasi, belajar",
+            "rationale_summary": "Representative reviews explicitly mention 'materi kurang lengkap' and missing curriculum topics. Keywords like 'kurang' ..."
+        },
+        {
+            "topic_id": 1,
+            "topic_label": "Topic 1: Learning Comprehension & Clarity",
+            "learning_barrier": "TB-1 Cognitive Difficulty",
+            "theory_basis": "Cognitive Load Theory",
+            "mapping_type": "Interpretive post-hoc mapping (not model-supervised)",
+            "keyword_evidence": "belajar, materi, aplikasi, quipper, animasi",
+            "rationale_summary": "Keywords 'paham', 'jelas', 'animasi' directly address the cognitive axis of learning. This topic captures feedback on ho..."
+        },
+        {
+            "topic_id": 2,
+            "topic_label": "Topic 2: Pricing & Package Affordability",
+            "learning_barrier": "TB-6 Cost / Affordability Barrier",
+            "theory_basis": "Educational Equity Constraint",
+            "mapping_type": "Interpretive post-hoc mapping (not model-supervised)",
+            "keyword_evidence": "bantu, aplikasi, belajar, cepat, paket",
+            "rationale_summary": "Anchors on 'murah', 'paket', 'harga_murah'. This represents economic friction affecting learning access (freemium/subsid..."
+        },
+        {
+            "topic_id": 3,
+            "topic_label": "Topic 3: Need for Scaffolding & Question Banks",
+            "learning_barrier": "TB-3 Lack of Learning Support",
+            "theory_basis": "Zone of Proximal Development (Vygotsky)",
+            "mapping_type": "Interpretive post-hoc mapping (not model-supervised)",
+            "keyword_evidence": "belajar, aplikasi, bahas, mudah_paham, soal",
+            "rationale_summary": "High frequency of 'bank_soal', 'bahas', 'tambah'. Indicates a need for additional instructional support, practice, and s..."
+        },
+        {
+            "topic_id": 4,
+            "topic_label": "Topic 4: Learner Motivation & Engagement",
+            "learning_barrier": "TB-2 Engagement & Motivation Problem",
+            "theory_basis": "Self-Determination Theory",
+            "mapping_type": "Interpretive post-hoc mapping (not model-supervised)",
+            "keyword_evidence": "suka, aplikasi, belajar, semangat, pokok",
+            "rationale_summary": "Keywords 'semangat', 'seru', 'suka' map directly to intrinsic motivation and engagement levels, acting as the inverse of..."
+        },
+        {
+            "topic_id": 5,
+            "topic_label": "Topic 5: Core App Crashes & Login Failures",
+            "learning_barrier": "TB-4 System Usability Issues",
+            "theory_basis": "Human-Computer Interaction (HCI)",
+            "mapping_type": "Interpretive post-hoc mapping (not model-supervised)",
+            "keyword_evidence": "tidak, aplikasi, soal, jawab, bug",
+            "rationale_summary": "Critical structural barriers affecting interaction flow (HCI). Defined by 'bug', 'keluar', 'login'. Represents friction ..."
+        },
+        {
+            "topic_id": 6,
+            "topic_label": "Topic 6: Performance Lag & Update Errors",
+            "learning_barrier": "TB-4 System Usability Issues",
+            "theory_basis": "Human-Computer Interaction (HCI)",
+            "mapping_type": "Interpretive post-hoc mapping (not model-supervised)",
+            "keyword_evidence": "aplikasi, tidak, mipi, daftar, utbk",
+            "rationale_summary": "System performance barriers ('lag', 'update', 'download') that interrupt the continuity of learning flow...."
+        },
+        {
+            "topic_id": 7,
+            "topic_label": "Topic 7: Authentication & System Access Errors",
+            "learning_barrier": "TB-4 System Usability Issues",
+            "theory_basis": "Human-Computer Interaction (HCI)",
+            "mapping_type": "Interpretive post-hoc mapping (not model-supervised)",
+            "keyword_evidence": "pahamify, tidak, terus, aplikasi, soal",
+            "rationale_summary": "System friction specifically tied to authentication ('sandi', 'sistem', 'error', 'loading'), disrupting access to learni..."
+        }
+    ],
+    "unique_barrier_categories": [
+        "TB-2 Engagement & Motivation Problem",
+        "TB-7 Content Quality Mismatch",
+        "TB-6 Cost / Affordability Barrier",
+        "TB-1 Cognitive Difficulty",
+        "TB-4 System Usability Issues",
+        "TB-3 Lack of Learning Support"
+    ],
+    "note_tb5_absent": "TB-5 (Access & Resource Limitation / Digital Divide) did not form a statistically distinct LDA cluster. Access-related signals are distributed across TB-4 and TB-6 topics."
+}

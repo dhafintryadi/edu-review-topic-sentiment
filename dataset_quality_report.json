@@ -1,0 +1,128 @@
+{
+    "datasets": {
+        "raw": {
+            "file_path": "C:/Users/ASUS/Documents/AITF-2026/PKL/Datasets/raw_review.csv",
+            "status": "Loaded Successfully",
+            "encoding": "utf-8",
+            "row_count": 15324,
+            "source_row_count": 16630,
+            "row_count_mismatch": -1306,
+            "columns": [
+                "reviewId",
+                "userName",
+                "score",
+                "content",
+                "at",
+                "thumbsUpCount",
+                "replyContent",
+                "repliedAt",
+                "appVersion"
+            ],
+            "missing_values": {
+                "reviewId": 0,
+                "userName": 0,
+                "score": 0,
+                "content": 0,
+                "at": 0,
+                "thumbsUpCount": 0,
+                "replyContent": 6249,
+                "repliedAt": 6249,
+                "appVersion": 3672
+            },
+            "duplicate_rows": 0,
+            "score_distribution": {
+                "1": 1803,
+                "2": 630,
+                "3": 995,
+                "4": 1412,
+                "5": 10484
+            }
+        },
+        "sentiment": {
+            "file_path": "C:/Users/ASUS/Documents/AITF-2026/PKL/Datasets/sentiment_preprocessed.csv",
+            "status": "Loaded Successfully",
+            "encoding": "utf-8",
+            "row_count": 76570,
+            "source_row_count": 66679,
+            "row_count_mismatch": 9891,
+            "columns": [
+                "reviewId",
+                "userName",
+                "score",
+                "content_raw",
+                "at",
+                "thumbsUpCount",
+                "replyContent",
+                "repliedAt",
+                "appVersion",
+                "content_clean",
+                "content_topic"
+            ],
+            "missing_values": {
+                "reviewId": 0,
+                "userName": 0,
+                "score": 11186,
+                "content_raw": 11186,
+                "at": 11186,
+                "thumbsUpCount": 11186,
+                "replyContent": 26755,
+                "repliedAt": 26755,
+                "appVersion": 28223,
+                "content_clean": 11186,
+                "content_topic": 17677
+            },
+            "duplicate_rows": 49353,
+            "score_distribution": {
+                "1": 10280,
+                "2": 3386,
+                "3": 5100,
+                "4": 6106,
+                "5": 40506,
+                "null": 11192
+            }
+        },
+        "topic": {
+            "file_path": "C:/Users/ASUS/Documents/AITF-2026/PKL/Datasets/topic_preprocessed.csv",
+            "status": "Loaded Successfully",
+            "encoding": "utf-8",
+            "row_count": 76570,
+            "source_row_count": 66679,
+            "row_count_mismatch": 9891,
+            "columns": [
+                "reviewId",
+                "userName",
+                "score",
+                "content_raw",
+                "at",
+                "thumbsUpCount",
+                "replyContent",
+                "repliedAt",
+                "appVersion",
+                "content_clean",
+                "content_topic"
+            ],
+            "missing_values": {
+                "reviewId": 0,
+                "userName": 1165,
+                "score": 11186,
+                "content_raw": 11186,
+                "at": 11186,
+                "thumbsUpCount": 11186,
+                "replyContent": 26755,
+                "repliedAt": 26755,
+                "appVersion": 28223,
+                "content_clean": 11186,
+                "content_topic": 17677
+            },
+            "duplicate_rows": 49353,
+            "score_distribution": {
+                "1": 10280,
+                "2": 3386,
+                "3": 5100,
+                "4": 6106,
+                "5": 40506,
+                "null": 11192
+            }
+        }
+    }
+}

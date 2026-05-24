@@ -1,0 +1,47 @@
+{
+    "phase": "PHASE_4",
+    "gap_classification": [
+        {
+            "gap_id": "GAP-01",
+            "severity": "CRITICAL",
+            "type": "MISSING_CRITICAL_SYSTEM",
+            "description": "Offline-first resilience not typically prioritized in EdTech blueprints, but empirically the #1 blocker (TB-4 severity: 1687.12).",
+            "recommendation": "Offline-first architecture must be a P0 foundational constraint in SR system design."
+        },
+        {
+            "gap_id": "GAP-02",
+            "severity": "CRITICAL",
+            "type": "MISSING_CRITICAL_SYSTEM",
+            "description": "Curriculum placement / prerequisite graph absent from standard adaptive learning designs, but TB-7 (severity: 668.44) confirms structural instructional mismatch is second-highest blocker.",
+            "recommendation": "Mandatory diagnostic onboarding + prerequisite graph must precede any content delivery."
+        },
+        {
+            "gap_id": "GAP-03",
+            "severity": "HIGH",
+            "type": "MISALIGNED_PRIORITY",
+            "description": "Gamification and engagement systems are often positioned early in EdTech blueprints, but empirically rank P2 (TB-2 severity: 51.93 vs TB-4 severity: 1687.12). Risk of overbuilding engagement before stability.",
+            "recommendation": "Defer gamification to Phase 2 of SR implementation, after system stability and curriculum alignment."
+        },
+        {
+            "gap_id": "GAP-04",
+            "severity": "HIGH",
+            "type": "UNDERWEIGHTED_FEATURE",
+            "description": "Equity and affordability features (TB-6, severity: 86.47) are often treated as policy decisions, not system features. Empirical data confirms they block active users.",
+            "recommendation": "Freemium pathways and effort-based unlocks should be system architecture concerns, not post-launch considerations."
+        },
+        {
+            "gap_id": "GAP-05",
+            "severity": "MEDIUM",
+            "type": "CORRECT_DIRECTION",
+            "description": "AI Tutor (TB-3) correctly positioned as P2. Empirical data confirms users request support systems, but severity is not crisis-level (47.71). Building AI Mentor after stability layer is empirically justified.",
+            "recommendation": "AI Tutor integration order is empirically validated. Proceed as planned."
+        },
+        {
+            "gap_id": "GAP-06",
+            "severity": "MEDIUM",
+            "type": "SIGNAL_NUANCE",
+            "description": "TB-1 Cognitive Difficulty shows high frequency (2,591 docs) but low negativity (3.3%). A naive gap analysis might deprioritize cognitive features entirely. In reality, the positive majority signals the PLATFORM CAN SUCCEED at cognition — but the 3.3% are at-risk users needing support.",
+            "recommendation": "Design cognitive adaptation features for the minority at-risk learners, not as a platform-wide remediation."
+        }
+    ]
+}

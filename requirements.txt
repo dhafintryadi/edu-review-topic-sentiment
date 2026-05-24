@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+tqdm
+emoji
+nltk
+Sastrawi
+gensim
+scipy
+scikit-learn
+imbalanced-learn
+google-play-scraper
+
