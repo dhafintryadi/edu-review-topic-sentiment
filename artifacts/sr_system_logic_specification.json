@@ -1,7 +1,7 @@
 {
     "artifact": "SR Adaptive Learning System Logic Specification",
     "version": "1.0-FINAL",
-    "generated_at": "2026-06-21T10:56:04.933239",
+    "generated_at": "2026-06-21T12:47:27.042924",
     "pipeline_provenance": "LDA_k8 (Phase 3A) → TB Taxonomy (3B) → Severity Model (3C) → Blueprint Prioritization (3D) → Design Synthesis (4) → System Specification (5)",
     "taxonomy_version": "TB-1 to TB-7 (frozen)",
     "empirical_grounding": "All behavior rules derived from 15,324 Indonesian educational platform reviews",

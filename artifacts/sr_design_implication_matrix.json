@@ -1,6 +1,6 @@
 {
     "phase": "PHASE_4",
-    "generated_at": "2026-06-21T10:56:04.869626",
+    "generated_at": "2026-06-21T12:47:27.020003",
     "traceability_source": "Phase 3C barrier_severity_ranking.json + Phase 3D sr_blueprint_validation.json",
     "taxonomy_version": "TB-1 to TB-7 (frozen from Phase 3B)",
     "barriers": {
