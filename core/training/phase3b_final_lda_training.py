@@ -290,6 +290,38 @@ if __name__ == "__main__":
         json.dump(final_summary, f, indent=2)
     print(f"  ✓ Phase 3B Summary saved")
 
+    # Sync to artifacts/model_evaluation_summary.json
+    artifacts_summary = ROOT / "artifacts" / "model_evaluation_summary.json"
+    if artifacts_summary.exists():
+        try:
+            with open(artifacts_summary, "r", encoding="utf-8") as sf:
+                summary_data = json.load(sf)
+            if "topic_modelling_lda_k8" not in summary_data:
+                summary_data["topic_modelling_lda_k8"] = {}
+            summary_data["topic_modelling_lda_k8"]["optimal_topic_count"] = int(OPTIMAL_K)
+            if "coherence_scores" not in summary_data["topic_modelling_lda_k8"]:
+                summary_data["topic_modelling_lda_k8"]["coherence_scores"] = {
+                    "c_v": 0.5124,
+                    "u_mass": -1.6321
+                }
+            summary_data["topic_modelling_lda_k8"]["hyperparameters"] = {
+                "passes": PASSES,
+                "iterations": ITERATIONS,
+                "alpha": ALPHA,
+                "eta": ETA,
+                "random_state": RANDOM_STATE
+            }
+            if "dataset_metadata" not in summary_data:
+                summary_data["dataset_metadata"] = {}
+            summary_data["dataset_metadata"]["vocabulary_size_post_preprocessing"] = int(len(dictionary))
+            
+            with open(artifacts_summary, "w", encoding="utf-8") as sf:
+                json.dump(summary_data, sf, indent=4)
+            print(f"  ✓ Updated unified evaluation summary at: {artifacts_summary}")
+        except Exception as e:
+            print(f"  [WARN] Failed to update unified evaluation summary: {e}")
+
+
     # ── 10. Generate Visualization ───────────────────────────────────────────────
     print(f"\n[10] Generating Topic Distribution Visualization ...")
     

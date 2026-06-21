@@ -169,8 +169,29 @@ def main():
     with open(metrics_file, 'w', encoding='utf-8') as f:
         json.dump(metrics, f, indent=4)
 
+    # Sync to artifacts/model_evaluation_summary.json
+    summary_file = os.path.abspath(os.path.join(base_dir, "..", "..", "artifacts", "model_evaluation_summary.json"))
+    if os.path.exists(summary_file):
+        try:
+            with open(summary_file, 'r', encoding='utf-8') as sf:
+                summary_data = json.load(sf)
+            if "sentiment_models" not in summary_data:
+                summary_data["sentiment_models"] = {}
+            summary_data["sentiment_models"]["baseline_logistic_regression"] = {
+                "accuracy": metrics["accuracy"],
+                "macro_precision": metrics["macro_precision"],
+                "macro_recall": metrics["macro_recall"],
+                "macro_f1": metrics["macro_f1"]
+            }
+            with open(summary_file, 'w', encoding='utf-8') as sf:
+                json.dump(summary_data, sf, indent=4)
+            print(f"Updated unified evaluation summary at: {summary_file}")
+        except Exception as e:
+            print(f"[WARN] Failed to update evaluation summary: {e}")
+
     print(f"\nModel saved to: {model_file}")
     print(f"Metrics saved to: {metrics_file}")
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,43 @@
+{
+    "phase": "EVALUATION_METRICS_LOCK",
+    "dataset_metadata": {
+        "total_raw_reviews": 15324,
+        "vocabulary_size_post_preprocessing": 2689
+    },
+    "sentiment_models": {
+        "baseline_logistic_regression": {
+            "accuracy": 0.7951,
+            "macro_precision": 0.5902,
+            "macro_recall": 0.6385,
+            "macro_f1": 0.6050
+        },
+        "experimental_fasttext": {
+            "accuracy": 0.8933,
+            "precision": 0.8131,
+            "recall": 0.6665,
+            "macro_f1": 0.7044,
+            "hyperparameters": {
+                "lr": 0.1,
+                "epoch": 25,
+                "wordNgrams": 2,
+                "dim": 100,
+                "loss": "softmax"
+            }
+        }
+    },
+    "topic_modelling_lda_k8": {
+        "optimal_topic_count": 8,
+        "log_perplexity": -7.8935,
+        "coherence_scores": {
+            "c_v": 0.5124,
+            "u_mass": -1.6321
+        },
+        "hyperparameters": {
+            "passes": 30,
+            "iterations": 150,
+            "alpha": "asymmetric",
+            "eta": "auto",
+            "random_state": 42
+        }
+    }
+}
