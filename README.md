@@ -4,7 +4,7 @@ Analisis ulasan pengguna aplikasi edukasi digital untuk mengidentifikasi hambata
 
 ---
 
-## 📖 Background
+## Background
 
 Platform pembelajaran digital sering dinilai hanya dari rating aplikasi atau jumlah pengguna. Untuk kebutuhan pendidikan, metrik tersebut belum cukup. Ulasan pengguna dapat memuat sinyal penting tentang kesulitan memahami materi, gangguan teknis, kebutuhan latihan soal, masalah akses, harga, dan kualitas konten.
 
@@ -12,13 +12,13 @@ Proyek ini menggunakan Natural Language Processing (NLP) Bahasa Indonesia untuk 
 
 ---
 
-## ❓ Problem Statement
+## Problem Statement
 
 Bagaimana ulasan pengguna aplikasi edukasi dapat digunakan untuk mengidentifikasi hambatan belajar dan prioritas fitur sistem pembelajaran adaptif secara lebih sistematis?
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 1. Mengumpulkan dan memvalidasi ulasan aplikasi edukasi dari Google Play Store.
 2. Membersihkan dan menormalisasi teks Bahasa Indonesia agar siap digunakan untuk sentiment analysis dan topic modelling.
@@ -28,7 +28,7 @@ Bagaimana ulasan pengguna aplikasi edukasi dapat digunakan untuk mengidentifikas
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 Sumber data berasal dari hasil crawling ulasan aplikasi edukasi digital di Google Play Store.
 
@@ -64,7 +64,7 @@ Google Play Store Reviews
 
 ---
 
-## 📂 Struktur Repositori (Production-Grade Layout)
+## Struktur Repositori (Production-Grade Layout)
 
 Repositori ini telah dimodularisasi menjadi arsitektur yang bersih dan decoupled untuk kebutuhan production:
 
@@ -104,7 +104,7 @@ edu-review-topic-sentiment/
 
 ---
 
-## 🛠️ Preprocessing
+## Preprocessing
 
 Pipeline preprocessing berada di `core/preprocessing/` dan diakses melalui `core/preprocessor.py` yang mencakup:
 - Case folding.
@@ -119,7 +119,7 @@ Preprocessing dibuat terpisah karena kebutuhan sentiment analysis dan topic mode
 
 ---
 
-## 📈 Sentiment Analysis
+## Sentiment Analysis
 
 Baseline sentiment analysis menggunakan pendekatan klasik berbasis fitur teks. Hasil baseline utama:
 
@@ -143,7 +143,7 @@ Terdapat juga eksperimen tambahan berbasis FastText dengan metrik validasi:
 
 ---
 
-## 🤖 Topic Modelling
+## Topic Modelling
 
 Topic modelling menggunakan LDA untuk mengidentifikasi kelompok isu utama dari ulasan pengguna.
 
@@ -160,7 +160,7 @@ Ringkasan hasil final:
 
 ---
 
-## 🔍 Learning Barrier Findings
+## Learning Barrier Findings
 
 Hasil topic modelling dipetakan menjadi taxonomy learning barrier:
 
@@ -183,7 +183,7 @@ Prioritas desain yang paling kuat dari hasil analisis:
 
 ---
 
-## 💡 Key Insights
+## Key Insights
 
 - Masalah teknis seperti crash, login failure, loading, dan update error bukan sekadar masalah aplikasi, tetapi hambatan akses belajar.
 - Kualitas dan kesesuaian materi menjadi isu besar; sistem adaptif perlu diagnostic placement dan sequencing berbasis prerequisite.
@@ -193,7 +193,7 @@ Prioritas desain yang paling kuat dari hasil analisis:
 
 ---
 
-## 📋 Recommendations
+## Recommendations
 
 Rekomendasi desain untuk sistem pembelajaran adaptif:
 - Bangun fondasi reliabilitas sistem lebih dulu: offline-first mode, session restore, dan graceful degradation.
@@ -205,7 +205,7 @@ Rekomendasi desain untuk sistem pembelajaran adaptif:
 
 ---
 
-## 📐 Arsitektur Sistem & Pemetaan Disiplin (DE vs DS/A)
+## Arsitektur Sistem & Pemetaan Disiplin (DE vs DS/A)
 
 Untuk menjamin skalabilitas dan stabilitas dalam fase production, kode sistem dipisahkan berdasarkan fokus Data Engineering (infrastruktur & reliabilitas) dan Data Science/Analytics (metrik statistik & model logika).
 
@@ -241,7 +241,7 @@ Untuk menjamin skalabilitas dan stabilitas dalam fase production, kode sistem di
 
 ---
 
-## ⚡ Cara Menjalankan Pipeline
+## Cara Menjalankan Pipeline
 
 ### Inisialisasi Dependensi
 Pasang seluruh pustaka Python yang dibutuhkan:
@@ -274,7 +274,7 @@ Seluruh berkas luaran spesifikasi adaptif (implikasi desain, protokol resiliensi
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - Ulasan Google Play tidak selalu merepresentasikan seluruh populasi siswa.
 - Rating pengguna tidak selalu sejajar dengan kualitas pengalaman belajar.
@@ -284,18 +284,7 @@ Seluruh berkas luaran spesifikasi adaptif (implikasi desain, protokol resiliensi
 
 ---
 
-## 🚀 Future Improvements
-
-- Tambahkan dashboard visual untuk distribusi topic, sentiment, dan severity.
-- Gunakan BERTopic atau embedding-based clustering sebagai pembanding LDA.
-- Tambahkan SHAP atau error analysis untuk model sentiment.
-- Buat pipeline reproducible end-to-end dengan satu entrypoint CLI.
-- Tambahkan sample dataset kecil agar reviewer bisa menjalankan demo tanpa file CSV besar.
-- Dokumentasikan data schema dan artifact lineage dengan lebih formal.
-
----
-
-## 🎯 Project Scope
+## Project Scope
 
 Scope paling aman untuk presentasi portfolio atau laporan PKL:
 1. Crawling dan validasi ulasan pengguna.
