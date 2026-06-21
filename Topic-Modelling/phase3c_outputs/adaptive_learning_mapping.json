@@ -1,35 +1,35 @@
 {
     "framework": "Sekolah Rakyat Adaptive Learning",
     "barrier_interventions": {
-        "TB-4 System Usability Issues": {
+        "TB-1 Cognitive Difficulty": {
             "severity_rank": 1,
             "priority": "CRITICAL",
-            "design_implication": "Fallback to offline mode, optimize asset delivery, gracefully degrade UX during high latency."
-        },
-        "TB-7 Content Quality Mismatch": {
-            "severity_rank": 2,
-            "priority": "CRITICAL",
-            "design_implication": "Route user to prerequisite diagnostic test, realign curriculum path to current ZPD."
-        },
-        "TB-6 Cost / Affordability Barrier": {
-            "severity_rank": 3,
-            "priority": "HIGH",
-            "design_implication": "Highlight freemium pathways, unlock targeted micro-scholarships based on effort."
-        },
-        "TB-1 Cognitive Difficulty": {
-            "severity_rank": 4,
-            "priority": "HIGH",
             "design_implication": "Trigger dynamic scaffolding, simplify vocabulary, offer alternative explanation formats (e.g., visual vs text)."
         },
         "TB-2 Engagement & Motivation Problem": {
-            "severity_rank": 5,
-            "priority": "MEDIUM",
+            "severity_rank": 2,
+            "priority": "CRITICAL",
             "design_implication": "Incorporate micro-rewards, progress visualization, and shorter, chunked learning milestones."
         },
+        "TB-4 System Usability Issues": {
+            "severity_rank": 3,
+            "priority": "HIGH",
+            "design_implication": "Fallback to offline mode, optimize asset delivery, gracefully degrade UX during high latency."
+        },
+        "TB-7 Content Quality Mismatch": {
+            "severity_rank": 4,
+            "priority": "HIGH",
+            "design_implication": "Route user to prerequisite diagnostic test, realign curriculum path to current ZPD."
+        },
         "TB-3 Lack of Learning Support": {
-            "severity_rank": 6,
+            "severity_rank": 5,
             "priority": "MEDIUM",
             "design_implication": "Activate AI Mentor (Qwen/TinyLlama) for real-time Q&A, suggest relevant question banks."
+        },
+        "TB-6 Cost / Affordability Barrier": {
+            "severity_rank": 6,
+            "priority": "MEDIUM",
+            "design_implication": "Highlight freemium pathways, unlock targeted micro-scholarships based on effort."
         }
     }
 }

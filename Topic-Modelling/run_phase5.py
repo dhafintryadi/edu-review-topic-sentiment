@@ -14,7 +14,8 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-BASE_DIR = Path("c:/Users/ASUS/Documents/AITF-2026/PKL/Topic-Modelling")
+# Paths — anchored relative to this script's location (Topic-Modelling/)
+BASE_DIR = Path(__file__).resolve().parent
 PHASE3C_OUT = BASE_DIR / "phase3c_outputs"
 PHASE4_OUT = BASE_DIR / "phase4_outputs"
 OUT_DIR = BASE_DIR / "phase5_outputs"
@@ -516,4 +517,4 @@ with open(OUT_DIR / "sr_system_logic_specification.json", "w", encoding="utf-8")
 print("  -> sr_system_logic_specification.json saved.")
 
 print("\nPhase 5 completed! All outputs saved to phase5_outputs/")
-print("Pipeline complete: Phase 3A → Phase 5 fully executed.")
+print("Pipeline complete: Phase 3A -> Phase 5 fully executed.")

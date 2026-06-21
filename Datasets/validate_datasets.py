@@ -1,12 +1,14 @@
 import pandas as pd
 import os
+from pathlib import Path
 
-base = r'c:\Users\ASUS\Documents\AITF-2026\PKL\Datasets'
+# Anchor to this script's parent directory (Datasets/)
+base = Path(__file__).resolve().parent
 
 FILES = {
-    "raw_review":              f"{base}/raw_review.csv",
-    "sentiment_preprocessed":  f"{base}/sentiment_preprocessed.csv",
-    "topic_preprocessed":      f"{base}/topic_preprocessed.csv",
+    "raw_review":              str(base / "raw_review.csv"),
+    "sentiment_preprocessed":  str(base / "sentiment_preprocessed.csv"),
+    "topic_preprocessed":      str(base / "topic_preprocessed.csv"),
 }
 
 EXPECTED_RAW_COLS    = ["reviewId","userName","score","content","at",
@@ -87,16 +89,16 @@ print(f"\n{SEP}")
 print("  SOURCE FILE ROW COUNTS (for cross-validation)")
 print(SEP)
 sources = {
-    "main_review.csv":                              f"{base}/main_review.csv",
-    "benchmarking_review.csv":                      f"{base}/benchmarking_review.csv",
+    "main_review.csv":                              str(base / "main_review.csv"),
+    "benchmarking_review.csv":                      str(base / "benchmarking_review.csv"),
     "main_review_preprocessed/sentiment_preprocessed.csv":
-        f"{base}/main_review_preprocessed/sentiment_preprocessed.csv",
+        str(base / "main_review_preprocessed" / "sentiment_preprocessed.csv"),
     "benchmark_review_preprocessed/sentiment_preprocessed.csv":
-        f"{base}/benchmark_review_preprocessed/sentiment_preprocessed.csv",
+        str(base / "benchmark_review_preprocessed" / "sentiment_preprocessed.csv"),
     "main_review_preprocessed/topic_preprocessed.csv":
-        f"{base}/main_review_preprocessed/topic_preprocessed.csv",
+        str(base / "main_review_preprocessed" / "topic_preprocessed.csv"),
     "benchmark_review_preprocessed/topic_preprocessed.csv":
-        f"{base}/benchmark_review_preprocessed/topic_preprocessed.csv",
+        str(base / "benchmark_review_preprocessed" / "topic_preprocessed.csv"),
 }
 for label, path in sources.items():
     try:

@@ -5,8 +5,8 @@
         "adjustment": "Neutral sentiments were not discarded but weighted zero for severity calculation. High confidence negatives (>0.8) applied a multiplier effect to penalize critical failures."
     },
     "key_findings": {
-        "most_severe_barrier": "TB-4 System Usability Issues",
-        "least_severe_barrier": "TB-3 Lack of Learning Support",
-        "total_critical_barriers_detected": 2355
+        "most_severe_barrier": "TB-1 Cognitive Difficulty",
+        "least_severe_barrier": "TB-6 Cost / Affordability Barrier",
+        "total_critical_barriers_detected": 1881
     }
 }

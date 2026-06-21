@@ -1,13 +1,13 @@
 {
     "phase": "PHASE_4",
-    "generated_at": "2026-05-11T09:51:08.584077",
+    "generated_at": "2026-06-21T09:51:30.474488",
     "traceability_source": "Phase 3C barrier_severity_ranking.json + Phase 3D sr_blueprint_validation.json",
     "taxonomy_version": "TB-1 to TB-7 (frozen from Phase 3B)",
     "barriers": {
         "TB-4 System Usability Issues": {
             "priority": "P0 - CRITICAL",
-            "severity_score": 1687.12,
-            "negative_ratio": 0.49856666666666666,
+            "severity_score": 88.44,
+            "negative_ratio": 0.09943333333333333,
             "design_category": "System Reliability & Infrastructure",
             "required_features": [
                 {
@@ -32,8 +32,8 @@
         },
         "TB-7 Content Quality Mismatch": {
             "priority": "P0 - CRITICAL",
-            "severity_score": 668.44,
-            "negative_ratio": 0.311,
+            "severity_score": 56.92,
+            "negative_ratio": 0.0265,
             "design_category": "Curriculum Architecture",
             "required_features": [
                 {
@@ -58,8 +58,8 @@
         },
         "TB-6 Cost / Affordability Barrier": {
             "priority": "P1 - HIGH",
-            "severity_score": 86.47,
-            "negative_ratio": 0.2009,
+            "severity_score": 6.66,
+            "negative_ratio": 0.0129,
             "design_category": "Access & Equity Model",
             "required_features": [
                 {
@@ -80,8 +80,8 @@
         },
         "TB-1 Cognitive Difficulty": {
             "priority": "P1 - HIGH",
-            "severity_score": 70.81,
-            "negative_ratio": 0.0332,
+            "severity_score": 1648.92,
+            "negative_ratio": 0.4903,
             "design_category": "Adaptive Learning Intelligence",
             "required_features": [
                 {
@@ -111,8 +111,8 @@
         },
         "TB-3 Lack of Learning Support": {
             "priority": "P2 - MEDIUM",
-            "severity_score": 47.71,
-            "negative_ratio": 0.0746,
+            "severity_score": 27.46,
+            "negative_ratio": 0.0652,
             "design_category": "AI Assistance Layer",
             "required_features": [
                 {

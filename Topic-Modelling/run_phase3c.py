@@ -6,13 +6,13 @@ from pathlib import Path
 from gensim.models.ldamodel import LdaModel
 from gensim.corpora import Dictionary
 
-# Define Paths
-BASE_DIR = Path("c:/Users/ASUS/Documents/AITF-2026/PKL/Topic-Modelling")
-PHASE1_OUT = BASE_DIR / "phase1_outputs"
-PHASE2_OUT = BASE_DIR / "phase2_outputs"
-PHASE3A_OUT = BASE_DIR / "phase3a_outputs"
-PHASE3B_OUT = BASE_DIR / "phase3b_outputs"
-OUT_DIR = BASE_DIR / "phase3c_outputs"
+# Define Paths — anchored relative to this script's location (Topic-Modelling/)
+BASE_DIR    = Path(__file__).resolve().parent
+PHASE1_OUT  = BASE_DIR / "phase1_outputs"
+PHASE2_OUT  = BASE_DIR / "phase2_outputs"
+# PHASE3A_OUT intentionally omitted — exploration model is not used in inference
+PHASE3B_OUT = BASE_DIR / "phase3b_outputs"   # ← LOCKED: optimal model lives here
+OUT_DIR     = BASE_DIR / "phase3c_outputs"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 print("Starting Phase 3C: Severity Scoring and Sentiment Integration...")
@@ -32,7 +32,8 @@ for category_name, labels_list in taxonomy_data["categories"].items():
 
 # 2. Load LDA Model and Dictionary
 dictionary = Dictionary.load(str(PHASE2_OUT / "lda_dictionary.gensim"))
-lda_model = LdaModel.load(str(PHASE3A_OUT / "lda_model_k8.gensim"))
+# Load the pre-trained OPTIMAL model from phase3b (not the exploration model from phase3a)
+lda_model = LdaModel.load(str(PHASE3B_OUT / "lda_model_final_k8.gensim"))
 
 # 3. Load Corpus and Drop Oversampling Duplicates to retain real-world frequency
 print("Loading corpus and dropping oversampling duplicates...")

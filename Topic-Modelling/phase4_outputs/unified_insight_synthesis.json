@@ -1,7 +1,7 @@
 {
     "phase": "PHASE_4",
     "title": "Sekolah Rakyat Learning Barrier Analysis — Unified Research Synthesis",
-    "generated_at": "2026-05-11T09:51:08.589298",
+    "generated_at": "2026-06-21T09:51:30.477464",
     "pipeline_summary": {
         "Phase 3A": "LDA_k8 exploratory topic modeling extracted 8 semantically stable topic clusters from 41,797 user reviews of Indonesian educational platforms.",
         "Phase 3B": "Topic clusters were interpreted through educational theory (Cognitive Load, ZPD, SDT, HCI, Digital Divide) to construct the TB-1 to TB-7 Learning Barrier Taxonomy.",

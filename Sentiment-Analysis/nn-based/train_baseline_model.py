@@ -45,7 +45,7 @@ def apply_tfidf_vectorization(X_train, X_test, ngram_range=(1, 2), max_features=
         max_features=max_features,
         min_df=2,
         max_df=0.95,
-        stop_words='english'  # Could use Indonesian stopwords if available
+        # stop_words='english' removed — corpus is Indonesian; use domain-specific stopwords if needed
     )
 
     X_train_vec = vectorizer.fit_transform(X_train)

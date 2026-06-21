@@ -1,7 +1,7 @@
 {
     "artifact": "TB-Driven AI Decision Rule Engine",
     "version": "1.0",
-    "generated_at": "2026-05-11T09:59:43.796070",
+    "generated_at": "2026-06-21T09:51:30.580063",
     "grounding": "All rules derived from empirical severity scores (Phase 3C) — not assumptions",
     "override_hierarchy": [
         "LEVEL-0: TB-4 System Stability — ABSOLUTE OVERRIDE (supersedes all other rules)",
@@ -13,7 +13,7 @@
     "rules": {
         "TB-4": {
             "barrier": "System Usability Issues",
-            "severity_score": 1687.12,
+            "severity_score": 88.44,
             "priority_tier": "P0 - CRITICAL / ABSOLUTE OVERRIDE",
             "trigger_conditions": [
                 "App crash detected or session terminated unexpectedly",
@@ -34,7 +34,7 @@
         },
         "TB-7": {
             "barrier": "Content Quality Mismatch",
-            "severity_score": 668.44,
+            "severity_score": 56.92,
             "priority_tier": "P0 - CRITICAL / STRUCTURAL PREREQUISITE",
             "trigger_conditions": [
                 "Onboarding diagnostic score indicates curriculum level mismatch (>2 grade levels)",
@@ -57,7 +57,7 @@
         },
         "TB-6": {
             "barrier": "Cost / Affordability Barrier",
-            "severity_score": 86.47,
+            "severity_score": 6.66,
             "priority_tier": "P1 - HIGH",
             "trigger_conditions": [
                 "User hits paywall on core curriculum content",
@@ -79,7 +79,7 @@
         },
         "TB-1": {
             "barrier": "Cognitive Difficulty",
-            "severity_score": 70.81,
+            "severity_score": 1648.92,
             "priority_tier": "P1 - HIGH (minority at-risk targeting)",
             "important_note": "3.3% negative ratio — do NOT over-intervene. Majority succeeds. Target at-risk signals specifically.",
             "trigger_conditions": [
@@ -103,7 +103,7 @@
         },
         "TB-2": {
             "barrier": "Engagement & Motivation Problem",
-            "severity_score": 51.93,
+            "severity_score": 232.67,
             "priority_tier": "P2 - MEDIUM (downstream optimization)",
             "important_note": "9.5% negative ratio — engagement is an optimization, not a blocker. NEVER prioritize over P0 layers.",
             "trigger_conditions": [
@@ -126,7 +126,7 @@
         },
         "TB-3": {
             "barrier": "Lack of Learning Support",
-            "severity_score": 47.71,
+            "severity_score": 27.46,
             "priority_tier": "P2 - MEDIUM (downstream optimization)",
             "trigger_conditions": [
                 "User explicitly searches for a topic not finding results",

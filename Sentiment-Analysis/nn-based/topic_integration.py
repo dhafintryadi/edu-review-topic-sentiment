@@ -84,7 +84,7 @@ def compute_topic_sentiment_matrix(df):
     print("Computing topic-sentiment matrix...")
 
     # Group by topic and sentiment
-    matrix = df.groupby(['topic_id', 'predicted_sentiment']).size().unstack(fill_value=0)
+    matrix = df.groupby(['topic_id', 'predicted_label_name']).size().unstack(fill_value=0)
 
     # Ensure all sentiment columns exist
     for sentiment in ['negative', 'neutral', 'positive']:

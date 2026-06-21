@@ -279,7 +279,7 @@ if __name__ == "__main__":
         "metrics": {
             "total_documents": len(doc_topic_matrix),
             "total_topics": optimal_k,
-            "avg_documents_per_topic": float(doc_metrics['num_documents'].mean()),
+            "avg_documents_per_topic": float(df_metrics['num_documents'].mean()),
             "avg_sentiment_score": float(sentiment_scores.mean()),
             "corpus_negative_pct": float((sentiment_scores > 0.5).sum() / len(sentiment_scores) * 100)
         },

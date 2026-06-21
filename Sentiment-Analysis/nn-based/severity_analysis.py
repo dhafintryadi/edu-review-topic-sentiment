@@ -12,15 +12,18 @@ def load_topic_sentiment_matrix(filepath):
 def compute_severity_scores(df):
     """Compute severity scores using formula: severity = negative_ratio × topic_frequency"""
 
-    # Compute negative ratio (negative sentiment proportion)
-    df['negative_ratio'] = df['negative'] / df['total_reviews']
+    # Guard: safe per-row negative ratio — default to 0 when total_reviews == 0
+    df['negative_ratio'] = df.apply(
+        lambda r: r['negative'] / r['total_reviews'] if r['total_reviews'] > 0 else 0.0,
+        axis=1,
+    )
 
-    # Topic frequency is already total_reviews (relative to total dataset)
-    # But we can normalize it
+    # Topic frequency normalised across all topics
     total_reviews_all_topics = df['total_reviews'].sum()
-    df['topic_frequency'] = df['total_reviews'] / total_reviews_all_topics
+    df['topic_frequency'] = df['total_reviews'] / total_reviews_all_topics \
+        if total_reviews_all_topics > 0 else 0.0
 
-    # Compute severity score
+    # Severity score
     df['severity_score'] = df['negative_ratio'] * df['topic_frequency']
 
     # Round for readability

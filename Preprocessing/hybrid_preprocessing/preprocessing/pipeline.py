@@ -117,6 +117,15 @@ class ReviewPreprocessor:
         sentiment_path = os.path.join(output_dir, "sentiment_preprocessed.csv")
         topic_path = os.path.join(output_dir, "topic_preprocessed.csv")
 
+        # ── Overwrite protection: delete stale outputs before writing ──────────
+        # Append mode is used inside the chunk loop for incremental writes, but
+        # without this pre-run cleanup each successive pipeline run would double
+        # the row count instead of producing a fresh file.
+        for _stale in (sentiment_path, topic_path):
+            if os.path.exists(_stale):
+                os.remove(_stale)
+                LOGGER.info("Removed stale output before rewrite: %s", _stale)
+
         seen_contents = set()
         chunk_iter = pd.read_csv(
             input_path,
@@ -127,6 +136,7 @@ class ReviewPreprocessor:
 
         sentiment_written = False
         topic_written = False
+
 
         for idx, chunk in enumerate(tqdm(chunk_iter, desc=f"Processing {os.path.basename(input_path)}")):
             chunk[content_column] = chunk[content_column].astype(str)

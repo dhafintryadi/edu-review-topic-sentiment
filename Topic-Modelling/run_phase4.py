@@ -13,8 +13,8 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-# Paths
-BASE_DIR = Path("c:/Users/ASUS/Documents/AITF-2026/PKL/Topic-Modelling")
+# Paths — anchored relative to this script's location (Topic-Modelling/)
+BASE_DIR = Path(__file__).resolve().parent
 PHASE3C_OUT = BASE_DIR / "phase3c_outputs"
 PHASE3D_OUT = BASE_DIR / "phase3d_outputs"
 OUT_DIR = BASE_DIR / "phase4_outputs"
