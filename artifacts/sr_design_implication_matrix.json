@@ -1,0 +1,135 @@
+{
+    "phase": "PHASE_4",
+    "generated_at": "2026-06-21T10:56:04.869626",
+    "traceability_source": "Phase 3C barrier_severity_ranking.json + Phase 3D sr_blueprint_validation.json",
+    "taxonomy_version": "TB-1 to TB-7 (frozen from Phase 3B)",
+    "barriers": {
+        "TB-4 System Usability Issues": {
+            "priority": "P0 - CRITICAL",
+            "severity_score": 88.44,
+            "negative_ratio": 0.09943333333333333,
+            "design_category": "System Reliability & Infrastructure",
+            "required_features": [
+                {
+                    "feature": "Offline-first learning mode",
+                    "rationale": "49.8% negative ratio signals users frequently hit connectivity/crash walls"
+                },
+                {
+                    "feature": "Crash recovery & session restore",
+                    "rationale": "High-confidence failures (1,021) indicate persistent, not transient, crashes"
+                },
+                {
+                    "feature": "Low-end device optimization",
+                    "rationale": "Learner base likely includes budget devices — performance must not gate learning access"
+                },
+                {
+                    "feature": "Graceful degradation UX",
+                    "rationale": "Authentication and loading failures need user-facing fallback states"
+                }
+            ],
+            "implementation_dependency": "NONE — must be first layer",
+            "dependency_risk_annotation": "NONE"
+        },
+        "TB-7 Content Quality Mismatch": {
+            "priority": "P0 - CRITICAL",
+            "severity_score": 56.92,
+            "negative_ratio": 0.0265,
+            "design_category": "Curriculum Architecture",
+            "required_features": [
+                {
+                    "feature": "Prerequisite knowledge graph",
+                    "rationale": "Reviews show users assigned wrong curriculum level (e.g., UTBK content for 7th graders)"
+                },
+                {
+                    "feature": "Adaptive curriculum sequencing",
+                    "rationale": "Structural mismatch (not gaps) is second-highest severity — path matters as much as content"
+                },
+                {
+                    "feature": "Diagnostic placement test at onboarding",
+                    "rationale": "31.1% negative ratio with 421 high-confidence failures confirms systemic misalignment from entry"
+                },
+                {
+                    "feature": "Curriculum version tagging (K13 / Merdeka)",
+                    "rationale": "User reviews directly cite curriculum confusion as frustration source"
+                }
+            ],
+            "implementation_dependency": "TB-4 (system must be stable before curriculum can load correctly)",
+            "dependency_risk_annotation": "DEPENDENCY_RISK_FLAGGED — curriculum personalization becomes meaningless if system blocks content delivery"
+        },
+        "TB-6 Cost / Affordability Barrier": {
+            "priority": "P1 - HIGH",
+            "severity_score": 6.66,
+            "negative_ratio": 0.0129,
+            "design_category": "Access & Equity Model",
+            "required_features": [
+                {
+                    "feature": "Freemium core learning path",
+                    "rationale": "Economic friction is empirically validated (20% negative ratio despite smaller topic volume)"
+                },
+                {
+                    "feature": "Effort-based content unlock",
+                    "rationale": "Reduces paywall perception without eliminating monetization model"
+                },
+                {
+                    "feature": "Scholarship / subsidy pathway integration",
+                    "rationale": "SR as public program must address structural economic exclusion"
+                }
+            ],
+            "implementation_dependency": "TB-4 (access features need stable system to be reliable)",
+            "dependency_risk_annotation": "DEPENDENCY_RISK_FLAGGED — freemium is irrelevant if users cannot even log in or load content"
+        },
+        "TB-1 Cognitive Difficulty": {
+            "priority": "P1 - HIGH",
+            "severity_score": 1648.92,
+            "negative_ratio": 0.4903,
+            "design_category": "Adaptive Learning Intelligence",
+            "required_features": [
+                {
+                    "feature": "Multi-modal content delivery (visual, text, animation)",
+                    "rationale": "Despite 2,591 documents in topic, only 3.3% are negative — mixed signal means personalization needed, not remediation"
+                },
+                {
+                    "feature": "Vocabulary simplification layer",
+                    "rationale": "Short median token length (~7 tokens) suggests learners prefer concise language"
+                },
+                {
+                    "feature": "ZPD-aligned difficulty progression",
+                    "rationale": "Grounded in Vygotsky theory — TB-1 is a personalization target, not a crisis point"
+                }
+            ],
+            "implementation_dependency": "TB-7 (cognitive adaptation only works if curriculum path is correct first)",
+            "dependency_risk_annotation": "DEPENDENCY_RISK_FLAGGED — adaptive simplification is ineffective if wrong content is shown"
+        },
+        "TB-2 Engagement & Motivation": {
+            "priority": "P2 - MEDIUM",
+            "severity_score": "N/A",
+            "negative_ratio": "N/A",
+            "design_category": "Unknown",
+            "required_features": [],
+            "implementation_dependency": "NONE",
+            "dependency_risk_annotation": "NONE"
+        },
+        "TB-3 Lack of Learning Support": {
+            "priority": "P2 - MEDIUM",
+            "severity_score": 27.46,
+            "negative_ratio": 0.0652,
+            "design_category": "AI Assistance Layer",
+            "required_features": [
+                {
+                    "feature": "AI Tutor (context-aware Q&A)",
+                    "rationale": "TB-3 confirmed empirically via 'bank_soal', 'bahas', 'tambah' keywords — learners actively request support resources"
+                },
+                {
+                    "feature": "Scaffolded hint system",
+                    "rationale": "ZPD-based support reduces cognitive load without giving answers"
+                },
+                {
+                    "feature": "Dynamic question bank expansion",
+                    "rationale": "Keyword evidence: learners explicitly request more practice materials"
+                }
+            ],
+            "implementation_dependency": "TB-4 + TB-7",
+            "dependency_risk_annotation": "DEPENDENCY_RISK_FLAGGED — AI tutor value is zero if the system crashes or the curriculum content is misaligned"
+        }
+    }
+}

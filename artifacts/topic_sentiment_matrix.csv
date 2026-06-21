@@ -1,0 +1,9 @@
+topic_id,topic_label,barrier_category,frequency,negative_ratio,mean_negative_confidence,high_confidence_negatives,severity_score
+1,Topic 1: Learning Comprehension & Clarity,TB-1 Cognitive Difficulty,4183,0.4903,0.7015,611,1648.92
+4,Topic 4: Learner Motivation & Engagement,TB-2 Engagement & Motivation Problem,1150,0.3017,0.6399,55,232.67
+0,Topic 0: Incomplete Material & Content Gaps,TB-7 Content Quality Mismatch,3515,0.0265,0.6105,9,56.92
+5,Topic 5: Core App Crashes & Login Failures,TB-4 System Usability Issues,602,0.088,0.6221,6,33.3
+7,Topic 7: Authentication & System Access Errors,TB-4 System Usability Issues,334,0.1377,0.6635,6,31.07
+3,Topic 3: Need for Scaffolding & Question Banks,TB-3 Lack of Learning Support,736,0.0652,0.5714,1,27.46
+6,Topic 6: Performance Lag & Update Errors,TB-4 System Usability Issues,551,0.0726,0.5975,4,24.07
+2,Topic 2: Pricing & Package Affordability,TB-6 Cost / Affordability Barrier,927,0.0129,0.5554,0,6.66
