@@ -487,7 +487,7 @@ master_spec = {
     "generated_at": datetime.now().isoformat(),
     "pipeline_provenance": "LDA_k8 (Phase 3A) → TB Taxonomy (3B) → Severity Model (3C) → Blueprint Prioritization (3D) → Design Synthesis (4) → System Specification (5)",
     "taxonomy_version": "TB-1 to TB-7 (frozen)",
-    "empirical_grounding": "All behavior rules derived from 41,797 Indonesian educational platform reviews",
+    "empirical_grounding": "All behavior rules derived from 15,324 Indonesian educational platform reviews",
     "override_hierarchy": decision_rules["override_hierarchy"],
     "implementation_sequencing": [
         "PHASE-A: Build TB-4 resilience layer (offline-first, crash recovery, graceful degradation)",

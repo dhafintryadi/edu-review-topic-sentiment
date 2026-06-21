@@ -191,7 +191,7 @@ topic_salience.sort(key=lambda x: x["relative_dominance_pct"], reverse=True)
 
 t3_output = {
     "task": "T3 - Topic Distribution Analysis",
-    "note": "Relative dominance proxied by aggregate keyword weight per topic (LDA_k8 outputs). Corpus size: 41,797 unique reviews.",
+    "note": "Relative dominance proxied by aggregate keyword weight per topic (LDA_k8 outputs). Corpus size: 15,324 unique reviews.",
     "metrics": ["topic_id", "total_keyword_weight", "relative_dominance_pct"],
     "distribution": topic_salience,
     "most_dominant_topic": topic_salience[0]["topic_label"],

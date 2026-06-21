@@ -3,7 +3,7 @@
     "title": "Sekolah Rakyat Learning Barrier Analysis — Unified Research Synthesis",
     "generated_at": "2026-06-21T09:51:30.477464",
     "pipeline_summary": {
-        "Phase 3A": "LDA_k8 exploratory topic modeling extracted 8 semantically stable topic clusters from 41,797 user reviews of Indonesian educational platforms.",
+        "Phase 3A": "LDA_k8 exploratory topic modeling extracted 8 semantically stable topic clusters from 15,324 user reviews of Indonesian educational platforms.",
         "Phase 3B": "Topic clusters were interpreted through educational theory (Cognitive Load, ZPD, SDT, HCI, Digital Divide) to construct the TB-1 to TB-7 Learning Barrier Taxonomy.",
         "Phase 3C": "Sentiment analysis (IndoBERTweet, calibrated) was integrated as a severity amplifier using the formula: frequency × negative_ratio × confidence. System Usability (TB-4) emerged as the dominant critical barrier.",
         "Phase 3D": "Severity rankings were mapped to Sekolah Rakyat blueprint features, producing a P0/P1/P2 implementation prioritization matrix.",
@@ -30,5 +30,5 @@
         "severity_to_architecture": "CONSISTENT — P0/P1/P2 ordering directly reflects severity rankings without post-hoc reordering.",
         "architecture_to_design_implications": "CONSISTENT — all feature requirements trace back to specific empirical signals (review evidence, sentiment ratios, topic keywords)."
     },
-    "confidence_statement": "All conclusions in this synthesis are grounded in empirical signals from 41,797 user reviews. No architectural decisions rely solely on theoretical assumptions — each is corroborated by observed severity data."
+    "confidence_statement": "All conclusions in this synthesis are grounded in empirical signals from 15,324 user reviews. No architectural decisions rely solely on theoretical assumptions — each is corroborated by observed severity data."
 }
