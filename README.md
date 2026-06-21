@@ -64,9 +64,7 @@ Google Play Store Reviews
 
 ---
 
-## Struktur Repositori (Production-Grade Layout)
-
-Repositori ini telah dimodularisasi menjadi arsitektur yang bersih dan decoupled untuk kebutuhan production:
+## Struktur Repositori
 
 ```text
 edu-review-topic-sentiment/
