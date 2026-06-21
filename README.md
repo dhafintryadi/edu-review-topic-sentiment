@@ -1,261 +1,120 @@
-# Edu Review Topic & Sentiment Analysis
+# Sekolah Rakyat: Empirical Learning Barrier Analysis & Adaptive Architecture Specification
 
-Analisis ulasan pengguna aplikasi edukasi digital untuk mengidentifikasi hambatan belajar, pola sentimen, dan implikasi desain sistem pembelajaran adaptif pada konteks Sekolah Rakyat.
+An end-to-end, deterministic Natural Language Processing (NLP) pipeline designed to extract user pain points, analyze learning barriers, and synthesize software architecture specifications for the adaptive learning platform **Sekolah Rakyat**.
 
-## Background
+---
 
-Platform pembelajaran digital sering dinilai hanya dari rating aplikasi atau jumlah pengguna. Untuk kebutuhan pendidikan, metrik tersebut belum cukup. Ulasan pengguna dapat memuat sinyal penting tentang kesulitan memahami materi, gangguan teknis, kebutuhan latihan soal, masalah akses, harga, dan kualitas konten.
+## 📖 Executive Project Summary
 
-Proyek ini menggunakan Natural Language Processing (NLP) Bahasa Indonesia untuk mengubah ulasan pengguna menjadi insight yang lebih terstruktur. Fokus utamanya bukan hanya klasifikasi sentimen, tetapi juga pemetaan topik keluhan dan kebutuhan pengguna menjadi learning barrier yang dapat digunakan sebagai dasar desain sistem pembelajaran adaptif.
+This project establishes a direct, empirical connection between raw, unstructured user feedback and critical software architecture decisions. By analyzing **15,324 user reviews** of digital learning platforms in Indonesia, the system leverages NLP (TF-IDF + Logistic Regression for sentiment classification and Latent Dirichlet Allocation (LDA) with $K=8$ for topic modeling) to map subjective complaints into prioritized system requirements. 
 
-## Problem Statement
+The empirical findings reveal that learning engagement is primarily blocked by **system instability** (TB-4) and **curriculum mismatch** (TB-7), rather than learner motivation deficits. These insights are programmatically synthesized into system blueprints, finite state machines (FSM), and behavioral policies to guide the construction of a resilient, offline-first adaptive learning architecture.
 
-Bagaimana ulasan pengguna aplikasi edukasi dapat digunakan untuk mengidentifikasi hambatan belajar dan prioritas fitur sistem pembelajaran adaptif secara lebih sistematis?
+---
 
-## Objectives
+## 📂 Production Directory Tree
 
-1. Mengumpulkan dan memvalidasi ulasan aplikasi edukasi dari Google Play Store.
-2. Membersihkan dan menormalisasi teks Bahasa Indonesia agar siap digunakan untuk sentiment analysis dan topic modelling.
-3. Membangun baseline sentiment analysis untuk memahami polaritas ulasan.
-4. Menggunakan topic modelling untuk menemukan kelompok isu utama dalam pengalaman belajar digital.
-5. Memetakan topic dan sentiment menjadi learning barrier serta rekomendasi desain untuk sistem Sekolah Rakyat.
-
-## Dataset
-
-Sumber data berasal dari hasil crawling ulasan aplikasi edukasi digital di Google Play Store.
-
-| Dataset | Keterangan |
-|---|---|
-| Raw review | 15.324 baris ulasan berhasil dimuat |
-| Kolom utama | `reviewId`, `userName`, `score`, `content`, `at`, `thumbsUpCount`, `replyContent`, `repliedAt`, `appVersion` |
-| Target sentiment | Diturunkan dari rating/label ulasan |
-| Input topic modelling | Teks ulasan yang sudah dibersihkan dan diproses |
-
-Catatan kualitas data:
-
-- Terdapat missing value pada `replyContent`, `repliedAt`, dan `appVersion`.
-- Distribusi rating tidak seimbang, dengan rating 5 mendominasi.
-- Dataset hasil preprocessing memiliki duplikasi yang perlu diperhatikan pada tahap validasi.
-- File CSV besar tidak disimpan di GitHub biasa dan perlu dikelola melalui storage eksternal atau Git LFS.
-
-## Methodology
-
-Workflow proyek mengikuti alur NLP end-to-end:
-
-```text
-Google Play Store Reviews
--> Crawling
--> Dataset Validation & Merge
--> Text Cleaning & Normalization
--> Sentiment Analysis
--> Topic Modelling
--> Learning Barrier Mapping
--> Design Implication for Adaptive Learning System
-```
-
-## Repository Structure
+The repository has been modularized and decoupled into a clean, production-grade layout. All experimental directories and legacy scripts have been purged:
 
 ```text
 edu-review-topic-sentiment/
-|-- Crawler/
-|   `-- google-play-scraper/       # Review crawling and app ID utilities
-|-- Datasets/                      # Dataset validation and merge scripts
-|-- Preprocessing/
-|   `-- hybrid_preprocessing/      # Indonesian text preprocessing pipeline
-|-- Sentiment-Analysis/
-|   |-- nn-based/                  # TF-IDF / classic ML sentiment baseline
-|   `-- transformer-based/         # Transformer experiment utilities
-|-- Topic-Modelling/               # LDA, barrier mapping, and design synthesis
-|-- docs/                          # GitHub upload and project notes
-|-- dataset_quality_report.json
-|-- validation_metrics.json
-|-- requirements.txt
-`-- README.md
+├── core/                           # ← Production logic package
+│   ├── preprocessor.py             #   Orchestration wrapper for preprocessing
+│   ├── sentiment_engine.py         #   TF-IDF + Logistic Regression inference
+│   ├── topic_engine.py             #   LDA inference (k=8, assets-anchored)
+│   ├── severity_analyzer.py        #   Phase 4 + Phase 5 native synthesis engine
+│   ├── preprocessing/              #   Migrated text cleaning and tokenization modules
+│   │   ├── __init__.py
+│   │   ├── cleaning.py
+│   │   ├── normalization.py
+│   │   ├── pipeline.py
+│   │   └── tokenizer.py
+│   ├── resources/                  #   Pre-packaged slang & stopword dictionaries
+│   │   ├── slang_dict.json
+│   │   └── stopwords.txt
+│   └── training/                   #   Research-grade training scripts (auditable baseline)
+│       ├── train_baseline_model.py
+│       └── phase3b_final_lda_training.py
+├── assets/                         # ← Model binaries, static taxonomy, and reference datasets
+│   ├── raw_review.csv
+│   ├── baseline_model.pkl          #   Serialized vectorizer and sentiment model
+│   ├── lda_model_final_k8.gensim   #   Serialized LDA topic model (with companion files)
+│   ├── lda_dictionary.gensim
+│   ├── lda_ready_corpus.csv
+│   ├── phase3b_topic_taxonomy.json #   Topic-to-barrier category mapping
+│   └── sr_blueprint_validation.json #  Sekolah Rakyat feature validation reference
+├── artifacts/                      # ← Dynamically generated pipeline outputs (JSON matrices)
+├── run_pipeline.py                 # ← Unified native Python pipeline orchestrator
+├── setup_assets.py                 # ← Bootstrap script to populate the assets directory
+├── requirements.txt                # ← System dependencies
+└── README.md                       # ← Project documentation
 ```
 
-## Preprocessing
+---
 
-Pipeline preprocessing berada di `Preprocessing/hybrid_preprocessing/` dan mencakup:
+## ⚡ Quick Start & Execution Guide
 
-- case folding,
-- pembersihan URL, simbol, noise, dan karakter tidak relevan,
-- normalisasi kata informal/slang,
-- tokenisasi,
-- stopword handling,
-- stemming Bahasa Indonesia dengan Sastrawi,
-- pemisahan output untuk kebutuhan sentiment analysis dan topic modelling.
-
-Preprocessing dibuat terpisah karena kebutuhan sentiment analysis dan topic modelling tidak selalu sama. Sentiment analysis perlu menjaga sinyal polaritas, sedangkan topic modelling perlu representasi kata yang lebih stabil untuk pembentukan topik.
-
-## Sentiment Analysis
-
-Baseline sentiment analysis menggunakan pendekatan klasik berbasis fitur teks. Hasil baseline utama:
-
-| Metric | Value |
-|---|---:|
-| Accuracy | 0.7951 |
-| Macro Precision | 0.5902 |
-| Macro Recall | 0.6385 |
-| Macro F1 | 0.6050 |
-
-Performa per kelas menunjukkan bahwa kelas positif jauh lebih mudah diprediksi dibanding kelas netral. Ini konsisten dengan distribusi rating yang tidak seimbang dan menjadi alasan mengapa macro-F1 lebih penting daripada accuracy saja.
-
-Terdapat juga eksperimen tambahan berbasis FastText dengan metrik validasi:
-
-| Metric | Value |
-|---|---:|
-| Accuracy | 0.8933 |
-| Precision | 0.8131 |
-| Recall | 0.6665 |
-| Macro F1 | 0.7044 |
-
-## Topic Modelling
-
-Topic modelling menggunakan LDA untuk mengidentifikasi kelompok isu utama dari ulasan pengguna.
-
-Ringkasan hasil final:
-
-| Item | Value |
-|---|---:|
-| Model | LDA |
-| Optimal topic count | 8 |
-| Vocabulary size | 2.689 |
-| Documents used | 12.017 |
-| LDA passes | 30 |
-| LDA iterations | 150 |
-
-Artefak topic modelling tersimpan di beberapa folder output:
-
-- `Topic-Modelling/phase3a_outputs/`
-- `Topic-Modelling/phase3b_outputs/`
-- `Topic-Modelling/phase3c_outputs/`
-- `Topic-Modelling/phase4_outputs/`
-- `Topic-Modelling/phase5_outputs/`
-- `Topic-Modelling/research_output/`
-
-## Learning Barrier Findings
-
-Hasil topic modelling dipetakan menjadi taxonomy learning barrier:
-
-| Topic | Learning Barrier | Category |
-|---:|---|---|
-| 0 | Incomplete Material & Content Gaps | Content Quality Mismatch |
-| 1 | Learning Comprehension & Clarity | Cognitive Difficulty |
-| 2 | Pricing & Package Affordability | Cost / Affordability Barrier |
-| 3 | Need for Scaffolding & Question Banks | Lack of Learning Support |
-| 4 | Learner Motivation & Engagement | Engagement & Motivation Problem |
-| 5 | Core App Crashes & Login Failures | System Usability Issues |
-| 6 | Performance Lag & Update Errors | System Usability Issues |
-| 7 | Authentication & System Access Errors | System Usability Issues |
-
-Prioritas desain yang paling kuat dari hasil analisis:
-
-1. `TB-4 System Usability Issues`: prioritas kritis karena gangguan teknis menghalangi akses belajar.
-2. `TB-7 Content Quality Mismatch`: prioritas kritis karena materi yang tidak sesuai level membuat personalisasi tidak efektif.
-3. `TB-6 Cost / Affordability Barrier`: prioritas tinggi karena akses ekonomi memengaruhi keberlanjutan belajar.
-4. `TB-3 Lack of Learning Support`: kebutuhan terhadap AI tutor, hint, dan perluasan bank soal.
-
-## Key Insights
-
-- Masalah teknis seperti crash, login failure, loading, dan update error bukan sekadar masalah aplikasi, tetapi hambatan akses belajar.
-- Kualitas dan kesesuaian materi menjadi isu besar; sistem adaptif perlu diagnostic placement dan sequencing berbasis prerequisite.
-- Pengguna membutuhkan scaffolding berupa pembahasan soal, bank soal, hint, dan dukungan belajar yang lebih kontekstual.
-- Sentiment analysis berguna sebagai sinyal pendukung, tetapi topic modelling memberikan insight yang lebih actionable untuk desain sistem.
-- Dataset rating cenderung tidak seimbang, sehingga evaluasi model harus melihat macro-F1 dan performa per kelas, bukan accuracy saja.
-
-## Recommendations
-
-Rekomendasi desain untuk sistem pembelajaran adaptif:
-
-- Bangun fondasi reliabilitas sistem lebih dulu: offline-first mode, session restore, dan graceful degradation.
-- Tambahkan diagnostic placement test agar siswa masuk ke level materi yang sesuai.
-- Gunakan prerequisite knowledge graph untuk menghindari mismatch materi.
-- Sediakan AI tutor kontekstual, scaffolded hints, dan dynamic question bank.
-- Pertimbangkan freemium core learning path atau subsidi untuk konteks akses pendidikan publik.
-- Tambahkan monitoring sentimen dan topic drift agar masalah baru bisa terdeteksi secara berkala.
-
-## How to Run
-
-Install dependencies:
-
+### Prerequisites
+Install all pipeline dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-Run preprocessing:
-
+### Step 1: Bootstrapping Assets
+Initialize the versioned models, reference taxonomies, and slang dictionaries in the correct structure:
 ```bash
-python Preprocessing/hybrid_preprocessing/run_preprocessing.py --input Datasets/raw_review.csv --output-dir Datasets --chunksize 2000
+python setup_assets.py
 ```
 
-Run sentiment baseline:
-
+### Step 2: Running the Pipeline
+Execute the end-to-end, native Python orchestration pipeline:
 ```bash
-python Sentiment-Analysis/nn-based/train_baseline_model.py
-python Sentiment-Analysis/nn-based/batch_inference.py
+python run_pipeline.py
 ```
 
-Run topic modelling phases:
-
-```bash
-python Topic-Modelling/phase1_preprocessing.py
-python Topic-Modelling/phase2_dictionary_corpus.py
-python Topic-Modelling/phase3a_lda_exploration.py
-python Topic-Modelling/phase3b_final_lda_training.py
-python Topic-Modelling/run_phase3c.py
-python Topic-Modelling/run_phase4.py
-python Topic-Modelling/run_phase5.py
+### Expected Telemetry Log Output
+```text
+[CHECK] Verifying optimal model binaries and datasets... [OK]
+[DEMO] 1. Preprocessing Raw Reviews... [SUCCESS]
+[DEMO] 2. Running Sentiment Inference (Verified Pre-trained Model)... [SUCCESS]
+[DEMO] 3. Computing Topic-Sentiment Severity Matrix... [SUCCESS]
+[DEMO] 4. Generating Sekolah Rakyat Validation Artifacts... [SUCCESS]
 ```
 
-## Outputs
+All synthesized outputs—including the design implication matrix, system resilience protocols, finite state machines, and curriculum alignment gates—are dynamically written as JSON structures to the `artifacts/` folder.
 
-Important output files include:
+---
 
-- `dataset_quality_report.json`
-- `validation_metrics.json`
-- `Sentiment-Analysis/nn-based/baseline_metrics.json`
-- `Topic-Modelling/phase3b_outputs/phase3b_summary.json`
-- `Topic-Modelling/research_output/learning_barrier_identification.json`
-- `Topic-Modelling/phase4_outputs/sr_design_implication_matrix.json`
-- `Topic-Modelling/phase5_outputs/sr_system_logic_specification.json`
+## 📐 System Architecture & Discipline Mapping (DE vs DS/A)
 
-## Tech Stack
+To transition from an experimental research state to a production-grade codebase, the system architecture separates operational engineering safeguards (Data Engineering) from statistical inference and rule logic (Data Science & Analytics).
 
-- Python
-- pandas, NumPy
-- scikit-learn
-- imbalanced-learn
-- gensim
-- Sastrawi
-- NLTK
-- google-play-scraper
-- FastText / transformer experiment utilities
+### 1. Data Engineering (DE) Focus Details
+* **Memory Optimization (Chunking):** The text cleaning execution loop streams the raw reviews in isolated chunks of `5,000` rows using pandas generator iterators (`chunksize`). This enforces a near-constant memory footprint, preventing Out-Of-Memory (OOM) crashes.
+* **Idempotent I/O Guards:** To protect against duplicate records during execution, the preprocessing pipeline executes pre-run file unlinking to remove stale datasets before writing chunks via append (`a`) mode:
+  ```python
+  for _stale in (sentiment_path, topic_path):
+      if os.path.exists(_stale):
+          os.remove(_stale)
+  ```
+* **System-Agnostic Portability (`pathlib`):** Hardcoded paths are completely eliminated. Programmatic pathing using `pathlib` resolves all system targets relative to `Path(__file__).resolve()` to ensure pathing logic runs correctly across Windows and Unix environments regardless of the directory from which the script was invoked.
 
-## Limitations
+### 2. Data Science & Analytics (DS/A) Focus Details
+* **NLP Feature Extraction:** The sentiment inference engine applies a pre-trained `TfidfVectorizer` to extract feature weights from clean texts, then runs batch inferences via a `LogisticRegression` classifier to generate prediction labels (`predicted_label_name`) and confidence scores.
+* **Mathematical Safety (Zero-Division Guards):** Calculating severity scores requires combining document frequency ($f$) and negative sentiment ratio ($r_n$). Explicit guards are built-in to prevent `ZeroDivisionError` or `NaN` outputs when dealing with low-frequency or zero-negative topic subsets:
+  ```python
+  negative_ratio = len(neg_df) / freq if freq > 0 else 0
+  mean_neg_conf  = neg_df["calibrated_confidence"].mean() if len(neg_df) > 0 else 0.0
+  ```
+* **Deterministic Rule Engine:** The calculated severity rankings are passed through an implication parser that translates metrics into concrete Sekolah Rakyat system specifications. High severity scores for System Usability (`TB-4` score: `1687.12`) trigger structural rules (e.g. offline-first caching), overriding secondary gamification and AI tutoring systems.
 
-- Ulasan Google Play tidak selalu merepresentasikan seluruh populasi siswa.
-- Rating pengguna tidak selalu sejajar dengan kualitas pengalaman belajar.
-- Label sentimen berbasis rating dapat mengandung noise.
-- Topic modelling LDA membutuhkan interpretasi manusia agar topik tidak dibaca secara terlalu literal.
-- Dataset besar dan model artefact tidak seluruhnya disimpan di repository GitHub.
+### 3. Synthesis Matrix
 
-## Future Improvements
-
-- Tambahkan dashboard visual untuk distribusi topic, sentiment, dan severity.
-- Gunakan BERTopic atau embedding-based clustering sebagai pembanding LDA.
-- Tambahkan SHAP atau error analysis untuk model sentiment.
-- Buat pipeline reproducible end-to-end dengan satu entrypoint CLI.
-- Tambahkan sample dataset kecil agar reviewer bisa menjalankan demo tanpa file CSV besar.
-- Dokumentasikan data schema dan artifact lineage dengan lebih formal.
-
-## Project Scope
-
-Scope paling aman untuk presentasi portfolio atau laporan PKL:
-
-1. crawling dan validasi ulasan pengguna,
-2. preprocessing NLP Bahasa Indonesia,
-3. sentiment analysis sebagai sinyal pendukung,
-4. topic modelling sebagai analisis utama,
-5. mapping learning barrier ke rekomendasi desain sistem Sekolah Rakyat.
-
-
+| Discipline | Target Module/File | Concrete Code Pattern / Line Context | Strategic Value for Project Stability |
+| :--- | :--- | :--- | :--- |
+| **Data Engineering** | `core/preprocessing/pipeline.py` | `pd.read_csv(..., chunksize=chunksize)` | Prevents RAM exhaustion/OOM crashes by processing massive datasets in isolated chunks. |
+| **Data Engineering** | `core/preprocessing/pipeline.py` | `if os.path.exists(_stale): os.remove(_stale)` | Enforces pipeline idempotency, preventing duplicate records when appending chunks to outputs. |
+| **Data Engineering** | `core/preprocessor.py` | `Path(__file__).resolve().parent` | Resolves cross-platform asset paths dynamically relative to module files, avoiding hardcoded dependencies. |
+| **Data Science & Analytics** | `core/sentiment_engine.py` | `vectorizer.transform(texts)` & `model.predict()` | Extracts TF-IDF text features and executes inferences to categorize sentiment. |
+| **Data Science & Analytics** | `core/topic_engine.py` | `negative_ratio = len(neg_df) / freq if freq > 0 else 0` | Guarantees mathematical stability and prevents program crashes due to division by zero on zero-negative topics. |
+| **Data Science & Analytics** | `core/severity_analyzer.py` | `feature_requirements = { "TB-4 ...": ... }` | Evaluates empirical scores to programmatically synthesize design matrices and resilience protocols. |
